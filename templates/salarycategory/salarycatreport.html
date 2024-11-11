@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="{% url 'salarycat_report' %}" method="post">
+{% if display_error %}
+<br />
+	<div class="alert alert-error">
+		{{ form.errors }}
+		{{ form.non_field_errors }}
+		{{ error }}
+	</div>
+{% endif %}
+	{% csrf_token %} 
+	<table class="table2 table2-form">
+		<tbody>
+			{{ form.management_form }}
+			{% for dtls in form %}
+				{{ dtls.id }} 
+				<tr class="salarycategory" id="salarycategory-{{ forloop.counter }}">
+					<td style="width:100px;">Salary Category:</td>
+					<td style="width:200px;">{{ dtls.salarycat }}</td>
+					<td style="width:10px;">
+		                {% if dtls.instance.id %}
+		                	<a class="btn btn-mini btn-danger removecloneMore"><i class="icon-minus"></i></a>
+		                	<span class="hidden IntEnt-delete">{{ dtls.DELETE  }}</span>    
+		              	{% else %}
+		                	<a class="btn btn-mini btn-primary cloneform"><i class="icon-plus"></i></a>
+		              	{% endif %}
+            		</td> 
+            		<td style="width:570px;">&nbsp;</td>
+				</tr>
+			{% endfor %}
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td> </td>
+				<td>
+					<button type="submit" class="btn btn-small"  name="save" value="save">Okay</button>
+					<a class="btn btn-small" href="{% url 'salarycat_report' %}">Cancel</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</form>
+{% endblock content %}

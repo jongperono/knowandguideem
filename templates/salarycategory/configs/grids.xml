@@ -1,0 +1,95 @@
+<grid>
+    <grid numcol="9">
+        <col role="counter">
+            <label>#</label>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>text</type>
+            <parname>code</parname>
+            <label>code</label>
+            <modelfield>code</modelfield>
+            <class>gridfiltersize-small</class>
+            <target>splcat_list</target>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>text</type>
+            <parname>desc</parname>
+            <label>description</label>
+            <modelfield>description</modelfield>
+        </col>
+        <col role="field" filter="true" humanize="true">
+            <type>text</type>
+            <parname>min</parname>
+            <label>Minimum Wage</label>
+            <modelfield>minimum_wage</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+        <col role="field" filter="false" modelproperty="true">
+            <type>text</type>
+            <parname>band</parname>
+            <label>Band</label>
+            <modelfield>bandname</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+        <col role="field" filter="true" modelproperty="true" modelproperty-field="status">
+            <type>selection</type>
+            <parname>stat</parname>
+            <label>status</label>
+            <modelfield>statusname</modelfield>
+            <class>gridfiltersize-small</class>
+            <selection>[{"value": "", "label": "-------"}, {"value": 1, "label": "Active"}, {"value": 0, "label": "Inactive"}, {"value": 2, "label": "Archived"}]</selection>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>date</type>
+            <parname>frm</parname>
+            <label>From</label>
+            <modelfield>datefrom</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>date</type>
+            <parname>to</parname>
+            <label>To</label>
+            <modelfield>dateto</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>date</type>
+            <parname>rev</parname>
+            <label>Revision</label>
+            <modelfield>revision_date</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>date</type>
+            <parname>arch</parname>
+            <label>Archive</label>
+            <modelfield>archived_date</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+        <col role="field" filter="false" sort="false" foreignkey="true" foriegnkeylabel="description">
+            <type>text</type>
+            <parname>area</parname>
+            <class>gridfiltersize-small</class>
+            <label>Area</label>
+            <modelfield>area</modelfield>
+        </col>
+        <col role="field" filter="false" sort="false" foreignkey="true" foriegnkeylabel="description">
+            <type>text</type>
+            <parname>subarea</parname>
+            <class>gridfiltersize-small</class>
+            <label>Sub-Area</label>
+            <modelfield>subarea</modelfield>
+        </col>
+        <col role="controls" filter="true" modelproperty="true" filter-submit="true" mod_id="kg-cm-ss-ls">
+	        <type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		        <modelfield mod_level="2">ctrlbtn_w</modelfield>
+		        <modelfield mod_level="1">ctrlbtn_r</modelfield>
+	        </actions>
+    	</col>
+    </grid>
+</grid>

@@ -1,0 +1,19 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="alert alert-info">
+	  <span class="label label-info">Total Lines: {{summary.total_lines}} </span>
+	  <span class="label label-success">Total Success: {{summary.total_success}} </span>
+	  <span class="label label-warning">Total Errors: {{summary.total_errors}}</span>
+	</div>
+  
+  <table class="table2 table2-form">
+  <tr>
+  	<th>DETAILS</th>
+  </tr>
+  {% for err in summary.errs %}
+  	<tr><td>{{ err }}</td></tr>
+  {% endfor %}
+  </table>
+{% endblock content %}

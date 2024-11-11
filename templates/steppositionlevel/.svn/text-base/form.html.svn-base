@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load custom_fields %}
+{% block content %}
+
+
+	<form action="{% if edit %} {% url 'editstepposition' id  %}{% else %}{% url 'createstepposition'  %} {% endif %}" method="post">	
+	{% csrf_token %}
+	
+
+<br/>
+		{% if message %}
+		<div class="alert-message fade in error">
+			{{message}}
+		</div>
+ 		{% endif %}
+ 			
+		{% if display_error %}
+		<div class="alert alert-error fade in">
+			{{ form.errors }}
+			{{ form.field_errors }}
+			
+			{{error}}
+		</div>
+	 	{% endif %}
+	
+<table class="table2 table2-form">
+           <tbody>
+           	
+           	
+           	   <tr>
+	               <td style="width:80px;">Band: </td>
+	               <td>{{ form.position_level }}</td>
+	             </tr>
+	             <tr>
+	               <td style="width:80px;">Level: </td>
+	               <td>{{ form.step }}</td>
+	             </tr>
+             	<tr>
+	               <td style="width:80px;">User-Access: </td>
+	               <td>{{ form.access }}</td>
+	             </tr>
+	          <tr>
+	               <td style="width:80px;">Status: </td>
+	               <td>{{ form.status }}</td>
+	             </tr>
+	             <tr>
+	               <td style="width:80px;">Sequence: </td>
+	               <td>{{ form.seq2 }}</td>
+	             </tr>
+
+              <tr>
+              	
+              	<td>
+              	</td>
+              	
+              	<td>
+                 <div class="btn-controls-footer">
+                 	
+             <div class="btn-controls">
+             	
+             	<button type="submit" class="btn btn-small" name="save" value="save">Save </button>
+             	
+                <button type="submit" class="btn btn-small"  name="save" value="savenew">Save &amp; New </button>
+             
+                
+                
+                <a href="{% url 'steppositionlevellist' %}"><button class="btn btn-small" type="button"> Cancel </button></a>
+             </div>
+           
+           </div>
+           </tr>
+           </table>
+           </form>
+
+{% endblock content %}

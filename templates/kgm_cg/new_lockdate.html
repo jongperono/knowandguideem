@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+{% if Edit %}
+	<form action="{% url 'pes_kgm_cg_new_lockdateedit' %}" method="post">
+	{% if display_error %}
+	<br />
+		<div class="alert alert-error">
+			{{ form.errors }}
+			{{ form.non_field_errors }}
+			{{ error }}
+		</div>
+	{% endif %}
+		{% csrf_token %} 
+		<table class="table2 table2-form">
+			<tbody>
+				
+				<tr>
+					<td style="width:100px;">Contract End Date:</td>
+					<td>{{ form.contract_enddate }}</td>
+				</tr>
+				<tr>
+					<td style="width:100px;">Regularization Date:</td>
+					<td>{{ form.regularization_date }}</td>
+				</tr>
+				<tr>
+					<td> </td>
+					<td>
+						<button type="submit" class="btn btn-small" name="save" value="save">Save</button>
+						<a class="btn btn-small" href="{% url 'pes_kgm_cg_new_lockdate' %}">Cancel</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+{% else %}
+	<table class="table2 table2-form">
+		<tbody>
+			
+			<tr>
+				<td style="width:100px;">Contract End Date:</td>
+				<td>{{ info.contract_enddate }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Regularization Date:</td>
+				<td>{{ info.regularization_date }}</td>
+			</tr>
+			<tr>
+				<td> </td>
+				<td>
+					<a class="btn btn-small" href="{% url 'pes_kgm_cg_new_lockdateedit' %}">Edit</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+{% endif %}
+{% endblock content %}

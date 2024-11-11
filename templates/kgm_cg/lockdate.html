@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+{% if Edit %}
+	<form action="{% url 'pes_kgm_cg_lockdateedit' %}" method="post">
+	{% if display_error %}
+	<br />
+		<div class="alert alert-error">
+			{{ form.errors }}
+			{{ form.non_field_errors }}
+			{{ error }}
+		</div>
+	{% endif %}
+		{% csrf_token %} 
+		<table class="table2 table2-form">
+			<tbody>
+				<tr>
+					<td style="width:100px;">Date From:</td>
+					<td>{{ form.datefrom }}</td>
+				</tr>
+				<tr>
+					<td style="width:100px;">Date To:</td>
+					<td>{{ form.dateto }}</td>
+				</tr>
+				<tr>
+					<td style="width:100px;">Resignation Date:</td>
+					<td>{{ form.resigned_date }}</td>
+				</tr>
+				<tr>
+					<td> </td>
+					<td>
+						<button type="submit" class="btn btn-small" name="save" value="save">Save</button>
+						<a class="btn btn-small" href="{% url 'pes_kgm_cg_lockdate' %}">Cancel</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+{% else %}
+	<table class="table2 table2-form">
+		<tbody>
+			<tr>
+				<td style="width:100px;">Date From:</td>
+				<td>{{ info.datefrom }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Date To:</td>
+				<td>{{ info.dateto }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Resignation Date:</td>
+				<td>{{ info.resigned_date }}</td>
+			</tr>
+			<tr>
+				<td> </td>
+				<td>
+					<a class="btn btn-small" href="{% url 'pes_kgm_cg_lockdateedit' %}">Edit</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,34 @@
+<tabs>
+	<listgroup>
+	    <list mod_id="pi-cs-ar-ls" mod_level="1" title="List" id="list" target="regionlist" urlid="index" urlsegment="4">
+	        <title>Area - List</title>
+	        <controls>
+	            <button mod_id="pi-cs-ar-ls" mod_level="2" target="regioncreate">Add</button>
+	        </controls>
+	    </list>
+	</listgroup>
+	<formgroup>
+		<listform mod_id="pi-cs-ar-ls" mod_level="1" title="List" id="list" target="regionlist" urlid="index" urlsegment="4">
+	        <title>Area </title>
+	        <controls>
+	        </controls>
+	    </listform>
+	    <form mod_id="pi-cs-ar-ls" mod_level="2" title="Form" id="list" target="regionlist" urlid="form" urlsegment="4">
+	        <title>Area Form </title>
+	        <controls>
+	            <button mod_id="pi-cs-ar-ls" mod_level="2" target="regioncreate">Add</button>
+	        </controls>
+	    </form>
+	</formgroup>
+	<cgtbl>
+	    <list mod_id="pi-cs-ar-ls" mod_level="1" title="List" id="list" target="regionlist" urlid="index" urlsegment="4">
+	        <title>Area - List</title>
+	        <controls>
+	            <button mod_id="pi-cs-ar-ls" mod_level="2" target="regioncreate">Add</button>
+	        </controls>
+	    </list>
+	</cgtbl>
+</tabs>
+
+
+

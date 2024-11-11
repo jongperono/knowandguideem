@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/intent/!svn/ver/3265/trunk/source/pes/knowandguideem/templates/companyscope
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/intent/!svn/ver/2051/trunk/source/pes/knowandguideem/templates/companyscope/__init__.py
+END
+form.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/intent/!svn/ver/3265/trunk/source/pes/knowandguideem/templates/companyscope/form.html
+END
+list.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/intent/!svn/ver/3265/trunk/source/pes/knowandguideem/templates/companyscope/list.html
+END

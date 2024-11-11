@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="{% url 'kgm_report_generic' %}" method="post" enctype="multipart/form-data">
+{% if display_error %}
+<br />
+	<div class="alert alert-error">
+		{{ error }}
+	</div>
+{% endif %}
+	{% csrf_token %} 
+	<table class="table2 table2-form">
+		<tbody>
+			<tr>
+				<td style="width:100px;">Type:</td>
+				<td>
+					<select name="type" id="id_type">
+						<option value="1">Download</option>
+						<option value="2">Upload</option>
+					</select>
+				</td>
+			</tr>
+			<tr id="company">
+				<td style="width:100px;">Module:</td>
+				<td>
+					<select name="category" id="id_category">
+						<option value="1">T.O.</option>
+						<option value="2">Position Classification</option>
+						<option value="3">R.P.B.</option>
+						<option value="4">Company Structure</option>
+					</select>
+				</td>
+			</tr>
+			<tr id="upload" style="display: none;">
+				<td style="width:100px;">File:</td>
+				<td>
+					<div class="fileupload fileupload-new" data-provides="fileupload">     		
+						<span class="btn btn-file btn-primary btn-small">
+							<span class="fileupload-new"><i class="icon-search"> </i>&nbsp;
+								Browse
+							</span>
+							<span class="fileupload-exists">Change</span>
+							<input type="file" name="file" id="id_file" class="input-xlarge">
+						</span> 
+						<span class="fileupload-preview"> </span> 
+				 	</div>
+				</td>
+			</tr>
+			<tr>
+				<td> </td>
+				<td>
+					<button type="submit" class="btn btn-small"  name="save" value="save">Okay</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</form>
+<script>
+	var type = $('#id_type').val()
+	if (type == 1)
+	{
+		//$('#company').show();
+		$('#upload').hide();
+	}
+	else
+	{
+		//$('#company').hide();
+		$('#upload').show();
+	}
+	$('#id_type').change(function(){
+		if ($(this).val() == 1)
+		{
+			//$('#company').show();
+			$('#upload').hide();
+		}
+		else
+		{
+			//$('#company').hide();
+			$('#upload').show();
+		}
+	});
+</script>
+{% endblock content %}

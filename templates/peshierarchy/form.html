@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+{% load custom_fields %}
+{% block content %}
+
+
+
+
+
+<form
+	action="{% if edit %} {% url 'peskgmhierarchyeedit' id  %}{% else %}{% url 'peskgmhierarchycreate'  %} {% endif %}"
+	method="post">
+	{% csrf_token %}
+
+
+
+
+
+	{% if message %}
+	<div class="alert alert-info">
+		{{message}}
+	</div>
+	{% endif %}
+
+
+
+	{% if display_error %}
+	<div class="alert alert-error">
+		{{ form.errors }}
+		{{ form.non_field_errors }}
+		{{error}}
+
+	</div>
+	{% endif %}
+
+
+
+	<table class="table2 table2-form">
+		<tbody>
+			{% if gp %}
+			<tr>
+				<td style="width:80px;">Code : </td>
+				<td>
+					<input class="span4" type="text" readonly="readonly" placeholder="{{ list.numcode }}">
+				</td>
+			</tr>
+			<tr>
+				<td style="width:80px;">Description : </td>
+				<td>
+					<input class="span4" type="text" readonly="readonly" placeholder="{{ list.description }}">
+				</td>
+			</tr>
+			<tr>
+				<td style="width:80px;">GP Code Division : </td>
+				<td>{{form.gpcode_div }}</td>
+			</tr>
+			<tr>
+				<td style="width:80px;">GP Code Department : </td>
+				<td>{{form.gpcode_dept }}</td>
+			</tr>
+			<tr>
+				<td style="width:80px;">MMM : </td>
+				<td>{{form.MMM }}</td>
+			</tr>
+			<tr>
+				<td style="width:80px;">Hierarchy : </td>
+				<td>
+					<input class="span4" type="text" readonly="readonly" placeholder="{{ list.hierarchytype }}">
+				</td>
+			</tr>
+			<tr>
+				<td style="width:80px;">Parent:</td>
+				<td>
+					<input class="span4" type="text" readonly="readonly" placeholder="{{ list.parent }}">
+				</td>
+			</tr>
+			<tr>
+				<td style="width:80px;">Company:</td>
+				<td>
+					<input class="span4" type="text" readonly="readonly" placeholder="{{ list.company }}">
+				</td>
+			</tr>
+
+			<tr>
+				<td style="width:100px;">Effectivity Date From:</td>
+				<td>
+					<input class="span4" type="text" readonly="readonly" placeholder="{{ list.datefrom }}">
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Effectivity Date To:</td>
+				<td>
+					<input class="span4" type="text" readonly="readonly" placeholder="{{ list.dateto }}">
+				</td>
+			</tr>
+			{% else %}
+			<tr>
+				<td style="width:80px;">Code : </td>
+				<td>{{form.numcode }}</td>
+			</tr>
+			<tr>
+				<td style="width:80px;">Description : </td>
+				<td>{{form.description }}</td>
+			</tr>
+			<tr>
+				<td style="width:80px;">GP Code Division : </td>
+				<td>{{form.gpcode_div }}</td>
+			</tr>
+			<tr>
+				<td style="width:80px;">GP Code Department : </td>
+				<td>{{form.gpcode_dept }}</td>
+			</tr>
+			<tr>
+				<td style="width:80px;">MMM : </td>
+				<td>{{form.MMM }}</td>
+			</tr>
+			<tr>
+				<td style="width:80px;">Hierarchy : </td>
+				<td>{% lookupfield form form.hierarchytype %}</td>
+			</tr>
+			<tr>
+				<td style="width:80px;">Parent : </td>
+				<td>{% lookupfield form form.parent %}</td>
+			</tr>
+			<tr>
+				<td style="width:80px;">Company : </td>
+				<td>{% lookupfield form form.company %}</td>
+			</tr>
+			<tr>
+				<td style="width:80px;">MMS Company Code : </td>
+				<td>{{form.mms_company_code }}</td>
+			</tr>
+			<tr>
+				<td style="width:80px;">MMS Division Code : </td>
+				<td>{{form.mms_div_code }}</td>
+			</tr>
+			<tr>
+				<td style="width:80px;">MMS Department Code : </td>
+				<td>{{form.mms_dept_code }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Effectivity Date From:</td>
+				<td>{{ form.datefrom }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Effectivity Date To:</td>
+				<td>{{ form.dateto }}</td>
+			</tr>
+			{% endif %}
+			<tr>
+				<td>
+				</td>
+				<td>
+					<div class="btn-controls-footer">
+						<div class="btn-controls">
+							<button type="submit" class="btn btn-small" name="save" value="save">Save </button>
+							<button type="submit" class="btn btn-small" name="save" value="savenew">Save &amp; New
+							</button>
+							<a href="{% url 'peskgmhierarchylist'  %}"><button class="btn btn-small" type="button">
+									Cancel </button></a>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</form>
+<script>
+	$("#id_description").keydown(function () {
+
+		$(".alert-info").fadeOut();
+	}
+	);
+	$("#id_hierarchytype").change(function () {
+		var type = $(this).val();
+		if (type == 5) {
+			$("#id_parent").removeAttr("required");
+		}
+		else {
+			$("#id_parent").attr("required", "true");
+		}
+	});
+</script>
+
+
+{% endblock content %}

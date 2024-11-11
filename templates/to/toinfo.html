@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load pes_access %}
+{% block content %}
+<br />
+<div class="alert alert-info">
+	Description: {{ to.description }}
+</div>
+<table class="table2 table2-grid">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Given Name</th>
+			<th>Filename</th>
+			<th>Date Uploaded</th>
+			<th>Size(bytes)</th>
+			<th class="align-right">Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for x in list %}
+			<tr>
+				<td>{{ forloop.counter}}</td>
+				<td>{{ x.filename }}</td>
+				<td>{{ x.file }}</td>
+				<td>{{ x.date_uploaded }}({{ x.date_uploaded|timesince }})</td>
+				<td>{{ x.file_size|filesizeformat }}</td>
+				<td class="icons-row">
+					{% if request|is_mod_allowed2:"kg-po-ti-ls,2,0" %}
+						<a href="{% url 'to_file_download' x.id %}" title="Download"><i class="icon-save icon-large"></i></a>
+						<a href="#" class="confirm_page_link" modal-title="Confirm Archive:" modal-body="Are you sure you want to archive this file?" modal-link="{% url 'to_archive_upload' to.id x.id %}" title="Archive"><i class="icon-paste icon-large"></i></a>
+					{% elif request|is_mod_allowed2:"kg-po-ti-ls,1,0" %}
+						<a href="{% url 'to_file_download' x.id %}" title="Download"><i class="icon-save icon-large"></i></a>
+					{% endif %}
+				</td>
+			</tr>
+		{% endfor %}
+			<tr>
+				
+			</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="6">
+				<div class="pagination pull-right">
+					Show Rows:
+					<select>
+						<option>10</option>
+						<option>50</option>
+                    	<option>100</option>
+                  	</select>
+                  	&nbsp;&nbsp;&nbsp;
+                  	Go to:
+                  	<input type="text" />
+                  	&nbsp;&nbsp;&nbsp;
+                  	1 - 10 of 100 &nbsp;
+                  	<div class="btn-group">
+				    	<button class="btn"><i class="icon-arrow-left"></i></button>
+				    	<button class="btn"><i class="icon-arrow-right"></i></button>
+				  	</div>
+                </div>
+        	</td>
+		</tr>
+    </tfoot>
+</table>
+{% endblock content %}

@@ -1,0 +1,79 @@
+<tabs>
+    <createjd>
+    	<list mod_id="kg-jd-ls" mod_level="1" title="List" urlid="" target="jobdesc_list" urlsegment="3" urlargs="#">
+	        <title>Job Description</title>
+	        <controls>
+	        </controls>
+	    </list>
+	    <create mod_id="kg-jd-ls" mod_level="2" title="FORM" urlid="jobdesc" target="#" urlsegment="3" urlargs="#">
+	        <title>Create Job Description</title>
+	      	<controls>
+	        </controls>
+	    </create>
+	</createjd>
+	<listjd>
+	    <list mod_id="kg-jd-ls" mod_level="1" title="List" urlid="jobdesc" target="#" urlsegment="3" urlargs="#">
+	        <title>Job Description</title>
+	        <controls>
+	            <button mod_id="kg-jd-ls" mod_level="2" target="jobdesc_create">Add</button>
+	        </controls>
+	    </list>
+	    <archive mod_id="kg-jd-ac" mod_level="1" title="Archive" urlid="" target="jobdesc_archive" urlsegment="3" urlargs="#">
+	        <title>Job Description</title>
+	        <controls>
+	            
+	        </controls>
+	    </archive>
+	</listjd>
+    <jdinfo>
+    	<list0 mod_id="kg-jd-ls" mod_level="1" title="List" urlid="" target="jobdesc_list" urlsegment="3" urlargs="#">
+	        <title>Job Description</title>
+	        <controls>
+	        </controls>
+	    </list0>
+	    <create mod_id="kg-jd-ls" mod_level="1" title="Detail" urlid="jobdesc" target="#" urlsegment="3">
+	        <title>Job Description Uploaded File(s)</title>
+	       	<controls>
+	            <button mod_id="kg-jd-ls" mod_level="2" target="jobdesc_info_upload" urlargs="urlarg1">Upload</button>
+	        </controls>
+	    </create>
+	    <archive mod_id="kg-jd-ac" mod_level="1" title="Archive" urlid="" target="jobdesc_archive" urlsegment="3" urlargs="#">
+	        <title>Job Description</title>
+	        <controls>
+	            
+	        </controls>
+	    </archive>
+	</jdinfo>
+    <jdupload>
+    	<list0 mod_id="kg-jd-ls" mod_level="1" title="List" urlid="" target="jobdesc_list" urlsegment="3" urlargs="#">
+	        <title>Job Description</title>
+	        <controls>
+	        </controls>
+	    </list0>
+	    <create0 mod_id="kg-jd-ls" mod_level="1" title="Detail" urlid="" target="jobdesc_info" urlsegment="3" urlargs="urlarg1">
+	        <title>Job Description Uploaded File(s)</title>
+	       	<controls>
+	        </controls>
+	    </create0>
+	    <create mod_id="kg-jd-ls" mod_level="2" title="Upload" urlid="jobdesc" target="#" urlsegment="3">
+	        <title>Upload JD File</title>
+	        <controls>
+	            
+	        </controls>
+	    </create>
+	</jdupload>
+	<jdarchive>
+		<list mod_id="kg-jd-ls" mod_level="1" title="List" urlid="" target="jobdesc_list" urlsegment="3">
+	        <title>Job Description</title>
+	        <controls>
+	            
+	        </controls>
+	    </list>
+	    <list1 mod_id="kg-jd-ac" mod_level="1" title="Archive" urlid="jobdesc" target="#" urlsegment="3">
+	        <title>JD Archive Files</title>
+	        <controls>
+	            
+	        </controls>
+	    </list1>
+	</jdarchive>
+</tabs>

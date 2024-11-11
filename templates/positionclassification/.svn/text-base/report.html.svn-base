@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="{% url 'positionclassificationreport' %}" method="post">
+{% if display_error %}
+<br />
+	<div class="alert alert-error">
+		{{ form.errors }}
+		{{ form.non_field_errors }}
+		{{ error }}
+	</div>
+{% endif %}
+	{% csrf_token %} 
+	<table class="table2 table2-form">
+		<tbody>
+			<tr>
+				<td style="width:100px;">Code:</td>
+				<td>{{ form.code }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Description:</td>
+				<td>{{ form.description }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">T.O:</td>
+				<td>{{ form.to }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Band/Level:</td>
+				<td>{{ form.bandlevel }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Status:</td>
+				<td>{{ form.status }}</td>
+			</tr>
+			<tr>
+				<td> </td>
+				<td>
+					<button type="submit" class="btn btn-small"  name="save" value="save">Okay</button>
+					<a class="btn btn-small" href="{% url 'positionclassificationreport' %}">Cancel</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</form>
+{% endblock content %}

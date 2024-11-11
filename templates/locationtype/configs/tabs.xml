@@ -1,0 +1,26 @@
+<tabs>
+	<listgroup>
+	    <list mod_id="pi-cs-lc-ls" mod_level="1" title="List" id="list" target="peskgmlocationtypelist" urlid="index" urlsegment="4">
+	        <title>Location Type </title>
+	        <controls>
+	            <button mod_id="pi-cs-lc-ls" mod_level="2" target="peskgmlocationtypecreate">Add</button>
+	        </controls>
+	    </list>
+	</listgroup>
+	<formgroup>
+		<listform mod_id="pi-cs-lc-ls" mod_level="1" title="List" id="list" target="peskgmlocationtypelist" urlid="index" urlsegment="4">
+	        <title>Location Type </title>
+	        <controls>
+	        </controls>
+	    </listform>
+	    <form mod_id="pi-cs-lc-ls" mod_level="2" title="Form" id="Form" target="peskgmlocationtypelist" urlid="form" urlsegment="4">
+	        <title>Location Type </title>
+	        <controls>
+	            <button mod_id="pi-cs-lc-ls" mod_level="2" target="peskgmlocationtypecreate">Add</button>
+	        </controls>
+	    </form>
+	</formgroup>
+</tabs>
+
+
+

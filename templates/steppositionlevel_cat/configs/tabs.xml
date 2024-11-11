@@ -1,0 +1,34 @@
+<tabs>
+    <createspl>
+    	<list mod_id="kg-cm-ss-ls" mod_level="1" title="List" urlid="" target="salarycat_list" urlsegment="4" urlargs="#">
+	        <title>Band/Level Category</title>
+	        <controls>
+	            
+	        </controls>
+	    </list>
+	    <list1 mod_id="kg-cm-ss-ls" mod_level="1" title="Detail" urlid="" target="splcat_list" urlsegment="4" urlargs="urlarg1">
+	        <title>Band/Level Category</title>
+	        <controls>
+	        </controls>
+	    </list1>
+	    <create mod_id="kg-cm-ss-ls" mod_level="2" title="FORM" urlid="splcat" target="#" urlsegment="4" urlargs="#">
+	        <title>Salary Structure Details - Form</title>
+	      	<controls>
+	            
+	        </controls>
+	    </create>
+	</createspl>
+	<listspl>
+		<list mod_id="kg-cm-ss-ls" mod_level="1" title="List" urlid="" target="salarycat_list" urlsegment="4" urlargs="#">
+	        <title>Position Category</title>
+	        <controls>
+	        </controls>
+	    </list>
+	    <list1 mod_id="kg-cm-ss-ls" mod_level="1" title="Detail" urlid="splcat" target="#" urlsegment="4" urlargs="#">
+	        <title>Salary Structure Details</title>
+	        <controls>
+	            <button mod_id="kg-cm-ss-ls" mod_level="2" target="splcat_create" urlargs="urlarg1">Add</button>
+	        </controls>
+	    </list1>
+	</listspl>
+</tabs>

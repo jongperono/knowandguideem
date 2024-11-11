@@ -1,0 +1,23 @@
+<tabs>
+	<listgroup>
+	    <list mod_id="pi-cs-br-ls" mod_level="1" title="List" id="list" target="peskgmlocationlist" urlid="index" urlsegment="4">
+	        <title>Branch</title>
+	        <controls>
+	            <button mod_id="pi-cs-br-ls" mod_level="2" target="peskgmlocationcreate">Add</button>
+	        </controls>
+	    </list>
+	</listgroup>
+	<formgroup>
+		<list2 mod_id="pi-cs-br-ls" mod_level="1" title="List" id="list" target="peskgmlocationlist" urlid="index" urlsegment="4">
+	        <title>Branch</title>
+	        <controls>
+	        </controls>
+	    </list2>
+	    <tab2 mod_id="pi-cs-br-ls" mod_level="2" title="Form" target="#" urlid="peskgmlocation" urlsegment="3">
+            <title>Branch</title>
+            <controls>
+                <button mod_id="pi-cs-br-ls" mod_level="2" target="peskgmlocationcreate">Add</button>
+            </controls>
+        </tab2>
+	</formgroup>
+</tabs>

@@ -1,0 +1,99 @@
+
+{% extends "base.html" %}
+{% load knowandguideempageinfo %}
+{% load pescompany %}
+{% block content %}
+
+
+
+		{% if message %}
+		<div class="alert alert-info">
+			{{message}}
+		</div>
+ 			{% endif %}
+	
+		{% if display_error %}
+		<div class="alert alert-error">
+		{{ form.errors }}
+		{{ form.non_field_errors }}
+		{{error}}
+
+		</div>
+	 {% endif %}
+<br/>
+<input type="hidden" id="ok" value="update all"/>
+
+
+	{% autoescape off %}
+           	
+           	{% pes_render_companytree request cid %}
+           	
+           	{% endautoescape %}    
+
+<br/>
+<div id="info-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="scanlogs-1" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="scanlogs-1">Employee/s:</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-small" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
+<style>
+	body .modal {
+    	width: 450px;
+}
+</style>
+<script>
+$("#ok").click(function()
+{
+	var z=0;
+	$(".hierarchy_tree" ).each(function( index ) {
+		
+		if (z<=500)
+		{
+		var id=$(this).attr('id');
+		var id=id.split("-");
+		hierarchy_id=id[1];
+		hierarchy_value=$(this).val();
+		var new_hierarchy_value=parseInt(hierarchy_value)+5;
+		
+		//alert(hierarchy_id+"--"+new_hierarchy_value);
+		
+			z++;
+				
+				$.post("{% url 'update_hierarchy' %}",{hierarchy_id:hierarchy_id,new_hierarchy_value:new_hierarchy_value,csrfmiddlewaretoken: '{{ csrf_token }}'},
+				function(data)
+				{
+					//alert(data)
+				}
+			
+				);	
+		
+		
+	 for(x=0;x<1000;x++)
+	 {
+	 var xxx=11232323;
+	 	
+	 }
+	}
+	});
+});
+$('.label').click(function(){
+		var uid = $(this).parent().parent().attr('id');
+		var iid = uid.toString().substring(3);
+		//alert(uid.toString().substring(3));
+		$.ajax({
+			url: "/intent/pes/pis/employee/hierachylist/" + iid
+		}).done(function(data) {
+			$('#info-modal .modal-body').html(data);
+			$('#info-modal').modal('show');
+		});
+	});
+</script>
+
+{% endblock content %}

@@ -1,0 +1,30 @@
+<grid>
+    <grid numcol="4">
+        <col role="counter">
+            <label>#</label>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>text</type>
+            <parname>id</parname>
+            <label>code</label>
+            <modelfield>code</modelfield>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>text</type>
+            <parname>dsc</parname>
+            <label>Description</label>
+            <target>jobdesc_info</target>
+            <modelfield>description</modelfield>
+        </col>
+        <col role="controls" filter="true" modelproperty="true" filter-submit="true" mod_id="kg-jd-ls">
+	        <type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		        <modelfield mod_level="2">ctrlbtn_w</modelfield>
+		        <modelfield mod_level="1">ctrlbtn_r</modelfield>
+	        </actions>
+    	</col>
+    </grid>
+</grid>

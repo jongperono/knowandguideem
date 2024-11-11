@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/intent/!svn/ver/13158/trunk/source/pes/knowandguideem/templates/positionclassification
+END
+form.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/intent/!svn/ver/13156/trunk/source/pes/knowandguideem/templates/positionclassification/form.html
+END
+list.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/intent/!svn/ver/10887/trunk/source/pes/knowandguideem/templates/positionclassification/list.html
+END
+report.html
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/intent/!svn/ver/12665/trunk/source/pes/knowandguideem/templates/positionclassification/report.html
+END

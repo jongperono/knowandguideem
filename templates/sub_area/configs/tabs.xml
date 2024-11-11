@@ -1,0 +1,26 @@
+<tabs>
+	<listgroup>
+	    <list mod_id="pi-cs-ar-ls" mod_level="1" title="List" id="list" target="sub_arealist" urlid="index" urlsegment="4">
+	        <title>Sub-Area - List</title>
+	        <controls>
+	            <button mod_id="pi-cs-ar-ls" mod_level="2" target="sub_areacreate">Add</button>
+	        </controls>
+	    </list>
+	</listgroup>
+	<formgroup>
+		<listform mod_id="pi-cs-ar-ls" mod_level="1" title="List" id="list" target="sub_arealist" urlid="index" urlsegment="4">
+	        <title>Sub-Area </title>
+	        <controls>
+	        </controls>
+	    </listform>
+	    <form mod_id="pi-cs-ar-ls" mod_level="2" title="Form" id="list" target="sub_arealist" urlid="form" urlsegment="4">
+	        <title>Sub-Area Form </title>
+	        <controls>
+	            <button mod_id="pi-cs-ar-ls" mod_level="2" target="sub_areacreate">Add</button>
+	        </controls>
+	    </form>
+	</formgroup>
+</tabs>
+
+
+

@@ -1,0 +1,30 @@
+<grid>
+    <grid numcol="4">
+        <col role="counter">
+            <label>#</label>
+        </col>
+        <col role="field" modelproperty="true" filter="true" filtercustom="true">
+            <type>text</type>
+            <parname>i</parname>
+            <label>Company ID</label>
+            <modelfield>companyid</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+        <col role="field" filter="true" sort="true" foreignkey="true" filtercustom="true">
+			<label>Associate</label>
+			<type>text</type>
+			<parname>e</parname>
+			<modelfield>person</modelfield>
+		</col>
+		<col role="controls" filter="true" modelproperty="true" filter-submit="true" mod_id="kg-ot-ra-ls">
+	        <type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		        <modelfield mod_level="2">ctrlbtn_w</modelfield>
+		        <modelfield mod_level="1">ctrlbtn_r</modelfield>
+	        </actions>
+    	</col>
+    </grid>
+</grid>

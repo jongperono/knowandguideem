@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load custom_fields %}
+{% block content %}
+<form action="{% if edit %} {% url 'peskgmhierarchyeedit' id  %}{% else %}{% url 'peskgmhierarchycreate'  %} {% endif %}" method="post">	
+{% csrf_token %}
+	{% if message %}
+		<div class="alert alert-info">
+			{{message}}
+		</div>
+	{% endif %}
+	{% if display_error %}
+		<div class="alert alert-error">
+			{{ form.errors }}
+			{{ form.non_field_errors }}
+			{{error}}
+		</div>
+ 	{% endif %}
+  <table class="table2 table2-form">
+           <tbody>
+           	
+           	    <tr style="display:">
+	               <td style="width:80px;">Code* : </td>
+	               <td>	{{ form.numcode }}</td>
+	             </tr>
+	             
+	              <tr>
+	               <td style="width:80px;">Description : </td>
+	               <td>
+	               	<input id="id_description" class="span4" type="text" value="" placeholder="" required="true" maxlength="90" name="description" autocomplete="off">
+	               	
+	               </td>
+	             </tr>
+	             <tr>
+	               <td style="width:80px;">GP Code Division : </td>
+	               <td>{{form.gpcode_div }}</td>
+	             </tr>
+	              <tr>
+	               <td style="width:80px;">GP Code Department : </td>
+	               <td>{{form.gpcode_dept }}</td>
+	             </tr>
+	             <tr>
+	               <td style="width:80px;">MMM : </td>
+	               <td>{{form.MMM }}</td>
+	             </tr>
+	             <tr>
+	               <td style="width:80px;">Hierarchy : </td>
+	               <td>	{% lookupfield form form.hierarchytype %}</td>
+	             </tr>
+	             
+             
+	             <tr style="display:none">
+	               <td style="width:80px;">Parent : </td>
+	               <td>	
+	               	
+	               
+	               
+	               
+	               	
+	               	<input id="id_parent" class="span4 lookUp" type="text" value="{{parent}}" placeholder="" name="parent" autocomplete="off"/>
+	               	</td>
+	             </tr>
+	             
+	           <tr>
+	               <td style="width:80px;">Company : </td>
+	               <td>	{% lookupfield form form.company %}</td>
+	             </tr>
+	          <tr>
+				<td style="width:100px;">Effectivity Date From:</td>
+				<td>{{ form.datefrom }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Effectivity Date To:</td>
+				<td>{{ form.dateto }}</td>
+			</tr>
+
+              <tr>
+              	
+              	<td>
+              	</td>
+              	
+              	<td>
+                 <div class="btn-controls-footer">
+                 	
+             <div class="btn-controls">
+             	
+             	<button type="submit" class="btn btn-small"  name="save" value="save">Save </button>
+             	
+                <button type="submit" class="btn btn-small"  name="save" value="savenew">Save &amp; New </button>
+             	
+               
+               <a href="{% url 'peskgmhierarchytreeviewlist'  %}"><button class="btn btn-small" type="button"> Cancel </button></a>
+                
+                
+             </div>
+           
+           </div>
+           </tr>
+           </table>
+
+
+
+</form>
+
+
+
+{% endblock content %}
+
+
+
+

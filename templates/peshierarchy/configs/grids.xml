@@ -1,0 +1,172 @@
+<grid>
+	<hierarchy_grid numcol="10">
+		<col role="counter">
+			<lable>#</lable>
+		</col>
+		<col role="field" filter="true" sort="true">
+			<label>Code</label>
+			<type>text</type>
+			<parname>code</parname>
+			<modelfield>numcode</modelfield>
+		</col>
+		<col role="field" filter="true" sort="true">
+			<label>Description</label>
+			<type>text</type>
+			<parname>description</parname>
+			<modelfield>description</modelfield>
+		</col>
+			<col role="field" filter="true" sort="true">
+			<label>GP Code Div.</label>
+			<type>text</type>
+			<parname>gpcode_div</parname>
+			<modelfield>gpcode_div</modelfield>
+			<class>gridfiltersize-small</class>
+		</col>
+			<col role="field" filter="true" sort="true">
+			<label>GP Code Dpt.</label>
+			<type>text</type>
+			<parname>gpcode_dept</parname>
+			<modelfield>gpcode_dept</modelfield>
+			<class>gridfiltersize-small</class>
+		</col>
+		<!-- <col role="field" filter="true" sort="true">
+			<label>MMM</label>
+			<type>text</type>
+			<parname>MMM</parname>
+			<modelfield>MMM</modelfield>
+			<class>gridfiltersize-small</class>
+		</col> -->
+		<col role="field" filter="true" sort="true">
+			<label>MMM</label>
+			<type>text</type>
+			<parname>MMM</parname>
+			<modelfield>mms_dept_code</modelfield>
+			<class>gridfiltersize-small</class>
+		</col>
+		<col role="field" filter="true" sort="true" foreignkey="true" foriegnkeylabel="description">
+			<label>Parent</label>
+			<type>text</type>
+			<parname>parent</parname>
+			<modelfield>parent</modelfield>
+		</col>
+		<col role="field" filter="true" sort="true" foreignkey="true" foriegnkeylabel="description">
+			<label>Company Structure Level</label>
+			<type>text</type>
+			<parname>level</parname>
+			<modelfield>hierarchytype</modelfield>
+		</col>
+		<col role="field" filter="true" sort="true" foreignkey="true" foriegnkeylabel="name"> 
+			<label>Company</label>
+			<type>text</type>
+			<parname>company</parname>
+			<modelfield>company</modelfield>
+			<class>gridfiltersize-medium</class>
+		</col>
+		<col role="field" filter="true" sort="true">
+            <type>date</type>
+            <parname>frm</parname>
+            <label>Effectivity Date From</label>
+            <modelfield>datefrom</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>date</type>
+            <parname>to</parname>
+            <label>Effectivity Date To</label>
+            <modelfield>dateto</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+		<col role="controls" filter="true" modelproperty="true" filter-submit="true" mod_id="kg-cs-cs-ls">
+	        <type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		        <modelfield mod_level="2">ctrlbtn_w</modelfield>
+		        <modelfield mod_level="1">ctrlbtn_r</modelfield>
+	        </actions>
+    	</col>
+	</hierarchy_grid>
+	<hierarchy_gp numcol="10">
+		<col role="counter">
+			<lable>#</lable>
+		</col>
+		<col role="field" filter="true" sort="true">
+			<label>Code</label>
+			<type>text</type>
+			<parname>code</parname>
+			<modelfield>numcode</modelfield>
+		</col>
+		<col role="field" filter="true" sort="true">
+			<label>Description</label>
+			<type>text</type>
+			<parname>description</parname>
+			<modelfield>description</modelfield>
+		</col>
+		<col role="field" filter="true" sort="true">
+			<label>GP Code Div.</label>
+			<type>text</type>
+			<parname>gpcode_div</parname>
+			<modelfield>gpcode_div</modelfield>
+			<class>gridfiltersize-small</class>
+		</col>
+		<col role="field" filter="true" sort="true">
+			<label>GP Code Dpt.</label>
+			<type>text</type>
+			<parname>gpcode_dept</parname>
+			<modelfield>gpcode_dept</modelfield>
+			<class>gridfiltersize-small</class>
+		</col>
+		<!-- <col role="field" filter="true" sort="true">
+			<label>MMM</label>
+			<type>text</type>
+			<parname>MMM</parname>
+			<modelfield>MMM</modelfield>
+			<class>gridfiltersize-small</class>
+		</col> -->
+
+		<col role="field" filter="true" sort="true" foreignkey="true" foriegnkeylabel="description">
+			<label>Parent</label>
+			<type>text</type>
+			<parname>parent</parname>
+			<modelfield>parent</modelfield>
+		</col>
+		<col role="field" filter="true" sort="true" foreignkey="true" foriegnkeylabel="description">
+			<label>Company Structure Level</label>
+			<type>text</type>
+			<parname>level</parname>
+			<modelfield>hierarchytype</modelfield>
+		</col>
+		<col role="field" filter="true" sort="true" foreignkey="true" foriegnkeylabel="name"> 
+			<label>Company</label>
+			<type>text</type>
+			<parname>company</parname>
+			<modelfield>company</modelfield>
+			<class>gridfiltersize-medium</class>
+		</col>
+		<col role="field" filter="true" sort="true">
+            <type>date</type>
+            <parname>frm</parname>
+            <label>Effectivity Date From</label>
+            <modelfield>datefrom</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>date</type>
+            <parname>to</parname>
+            <label>Effectivity Date To</label>
+            <modelfield>dateto</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+		<col role="controls" filter="true" modelproperty="true" filter-submit="true" mod_id="kg-cs-cs-ls">
+	        <type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		        <modelfield mod_level="2">ctrlbtn_x</modelfield>
+		        <modelfield mod_level="1">ctrlbtn_r</modelfield>
+	        </actions>
+    	</col>
+	</hierarchy_gp>
+</grid>

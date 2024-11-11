@@ -1,0 +1,48 @@
+<tabs>
+    <creategroup>
+	    <create mod_id="kg-rp-ls" mod_level="1" title="Create" id="create" target="peskgmlocationcreate">
+	        <title>test</title>
+	    </create>
+	</creategroup>
+	<listgroup>
+	    <list mod_id="kg-cs-cs-ls" mod_level="1" title="List" id="list" target="peskgmhierarchylist" urlid="index" urlsegment="4">
+	        <title>Company Structure - List</title>
+	        <controls>
+	            <button mod_id="kg-cs-cs-ls" mod_level="2" target="peskgmhierarchycreate">Add</button>
+	        </controls>
+	    </list>
+	    <tab2 mod_id="kg-cs-cs-tv" mod_level="1" title="TreeView" target="peskgmhierarchytreeviewlist" urlid="treeview" urlsegment="4">
+            <title>Company Structure Tree View</title>
+            <controls>
+                <button mod_id="kg-cs-cs-ls" mod_level="2" target="peskgmhierarchycreate">Add</button>
+            </controls>
+        </tab2>
+	</listgroup>
+	<formgroup>
+		<list2 mod_id="kg-cs-cs-ls" mod_level="1" title="List" id="list" target="peskgmhierarchylist" urlid="index" urlsegment="4">
+			<title>Company Structure - List</title>
+	        <controls>
+	            <button mod_id="kg-cs-cs-ls" mod_level="2" target="peskgmhierarchycreate">Add</button>
+	        </controls>
+	    </list2>
+	    <tab3 mod_id="kg-cs-cs-tv" mod_level="1" title="TreeView" target="peskgmhierarchytreeviewlist" urlid="treeview" urlsegment="4">
+            <title>Company Structure Tree View</title>
+            <controls>
+                <button mod_id="kg-cs-cs-ls" mod_level="2" target="peskgmhierarchycreate">Add</button>
+            </controls>
+        </tab3>
+		 <tab2 mod_id="kg-cs-cs-ls" mod_level="1" title="Form" target="peskgmhierarchytreeviewlist" urlid="form" urlsegment="4">
+            <title>Company Structure</title>
+            <controls>
+                <button mod_id="kg-cs-cs-ls" mod_level="2" target="peskgmhierarchycreate">Add</button>
+            </controls>
+        </tab2>
+	</formgroup>
+	<reportgroup>
+	    <list mod_id="kg-rp-cs" mod_level="1" title="Form" target="positionclassificationreport" urlid="hierarchy" urlsegment="4">
+	        <title>Company Structure Report</title>
+	        <controls>
+	        </controls>
+	    </list>
+	</reportgroup>
+</tabs>

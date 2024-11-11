@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="{% url 'kgm_companystructure_report' %}" method="post">
+{% if display_error %}
+<br />
+	<div class="alert alert-error">
+		{{ form.errors }}
+		{{ form.non_field_errors }}
+		{{ error }}
+	</div>
+{% endif %}
+	{% csrf_token %} 
+	<table class="table2 table2-form">
+		<tbody>
+			<tr>
+				<td style="width:100px;">Company:</td>
+				<td>
+					<input id="id_company" class="span4 lookUp" type="text" placeholder="" name="company" lookupclass="span3" data-link="/intent/base/lookup/partylookup/" autocomplete="off">
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Code:</td>
+				<td>
+					<input class="span4" type="text" placeholder="" autocomplete="off" name="code"/>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Description:</td>
+				<td>
+					<input class="span4" type="text" placeholder="" autocomplete="off" name="description"/>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">GP-Code Division:</td>
+				<td>
+					<input class="span4" type="text" placeholder="" autocomplete="off" name="gpdiv"/>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">GP-Code Department:</td>
+				<td>
+					<input class="span4" type="text" placeholder="" autocomplete="off" name="gpdpt"/>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">GP-Code Department:</td>
+				<td>
+					<input class="span4" type="text" placeholder="" autocomplete="off" name="gpdpt"/>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Hierarchy:</td>
+				<td>
+					<input id="id_hierarchytype" class="span4 lookUp" type="text" placeholder="" lookupclass="span4" data-link="/intent/base/lookup/peshierarchytypelookup/" autocomplete="off" value="" name="type">
+				</td>
+			</tr>
+			<tr>
+				<td> </td>
+				<td>
+					<button type="submit" class="btn btn-small"  name="save" value="save">Okay</button>
+					<a class="btn btn-small" href="{% url 'kgm_companystructure_report' %}">Cancel</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</form>
+{% endblock content %}

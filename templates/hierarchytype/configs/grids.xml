@@ -1,0 +1,43 @@
+<grid>
+	<subgrid numcol="5">
+		<col role="counter">
+			<lable>#</lable>
+		</col>
+		<col role="field" filter="true" sort="true" >
+			<label>Code</label>
+			<type>text</type>
+			<parname>code</parname>
+			<modelfield>code</modelfield>
+		</col>
+		<col role="field" filter="true" sort="true" >
+			<label>Description</label>
+			<type>text</type>
+			<parname>description</parname>
+			<modelfield>description</modelfield>
+		</col>
+		<col role="field" filter="true" sort="true" >
+			<label>sequence</label>
+			<type>text</type>
+			<parname>sequence</parname>
+			<modelfield>sequence</modelfield>
+		</col>
+		<col role="field" filter="true" modelproperty="true" modelproperty-field="status">
+            <type>selection</type>
+            <parname>stat</parname>
+            <label>status</label>
+            <modelfield>statusname</modelfield>
+            <class>gridfiltersize-small</class>
+            <selection>[{"value": "", "label": "-------"}, {"value": 1, "label": "Active"}, {"value": 0, "label": "Inactive"}]</selection>
+        </col>
+		<col role="controls" filter="true" modelproperty="true" filter-submit="true" mod_id="kg-cs-ch-ls">
+	        <type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		        <modelfield mod_level="2">ctrlbtn_w</modelfield>
+		        <modelfield mod_level="1">ctrlbtn_r</modelfield>
+	        </actions>
+    	</col>
+	</subgrid>	
+</grid>

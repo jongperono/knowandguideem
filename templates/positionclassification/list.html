@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load pesgrids %}
+{% block content %}
+
+
+
+		{% if message %}
+		<div class="alert alert-info">
+			{{message}}
+		</div>
+ 			{% endif %}
+	
+		{% if display_error %}
+		<div class="alert alert-error">
+		{{ form.errors }}
+		{{ form.non_field_errors }}
+		{{error}}
+
+		</div>
+	 {% endif %}
+ {% page_render_gridview request page.gridlist page.feature page.gridgroup page.gridlist_count %}
+<script>
+	$('.id_to').live("click", function(){
+		uid = $(this).attr('pid');		
+		if ($('#id_to_'+uid).attr('data-popover-status') == '1'){
+			$('#id_to_'+uid).attr('data-popover-status', '0');
+			$('#id_to_'+uid).popover('hide');
+			return;
+		}
+		$.ajax({
+			url: "/intent/pes/knowandguideem/rpb/toinfo2/" + uid
+		}).done(function(data) {
+			$('#id_to_'+uid).attr('data-content', data);
+			$('#id_to_'+uid).popover('show');
+			$('#id_to_'+uid).attr('data-popover-status', '1');
+		});
+	});
+</script>
+{% endblock content %}

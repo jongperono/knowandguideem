@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+  <form action="{% url 'pes_kgm_cg_cmpy_dtl_edit' id %}" method="post">  
+    {% csrf_token %}
+    {% if display_error %}
+      <div class="alert alert-error fade in">
+        {{ form.errors }}
+        {{ form.non_field_errors }}
+        {{ error }}
+      </div>
+    {% endif %}
+    <table class="table2 table2-form">
+      <tbody>
+          <tr>
+          	<td class="span2">Company</td>
+            <td>{{form.company}}</td>
+          </tr>
+          <tr>
+          	<td class="span2">Company Rating</td>
+            <td>{{form.company_rate}}</td>
+          </tr>
+          <tr>
+          	<td class="span2">OverAll Rating</td>
+            <td>{{form.OverAll}}</td>
+          </tr>
+          
+      <tr>
+          <td colspan="8">
+            <div class="btn-controls-footer">
+              <div class="btn-controls">
+                <button type="submit" class="btn btn-small"  name="save" value="save">Save </button>
+                <a href="{% url 'pes_kgm_cg_cmpy_dtl' %}"><button class="btn btn-small" type="button"> Cancel </button></a>
+              </div>
+            </div>
+          </td>
+        </tr>
+    </table>
+  </form>
+{% endblock content %}

@@ -1,0 +1,14 @@
+Know And Guide'Em Menu
+<br/>
+<br/>
+<a href="{% url 'steppositionlevellist'  %}">Step Position Level</a><br/>
+<a href="{% url 'peskgmhierarchylist'  %}">Hierarchy</a><br/>
+<a href="{% url 'positionlevellist'  %}">Position Level</a><br/>
+<a href="{% url 'peskgmlocationlist'  %}">Location</a><br/>
+<a href="{% url 'pescompanyscopelist'  %}">Company Scope</a><br/>
+<a href="{% url 'step_list'  %}">Step</a><br/>
+<a href="{% url 'to_list'  %}">TO</a><br/>
+<a href="{% url 'rpb_list'  %}">RPT</a><br/>
+<a href="{% url 'salarycat_list'  %}">Salary Category</a><br/>
+<a href="{% url 'jobdesc_list'  %}">Job Description</a><br/>
+<a href="{% url 'splcat_list'  %}">Step Position Category</a><br/>

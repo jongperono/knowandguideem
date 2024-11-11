@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load custom_fields %}
+{% block content %}
+<form action="{% if Edit %}{% url 'rpb_modify' id %}{% else %}{% url 'rpb_create' %}{% endif %}" method="post">
+
+{% if display_error %}
+<br />
+	<div class="alert alert-error">
+		{{ form.errors }}
+		{{ form.non_field_errors }}
+		{{ error }}
+	</div>
+{% endif %}
+{% if message %}
+<br />
+	<div class="alert alert-success">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<h4>Success!</h4>
+		The data has been saved...
+	</div>
+{% endif %}
+	{% csrf_token %} 
+	<table class="table2 table2-form">
+		<tbody>
+			<tr>
+				<td style="width:100px;">Code:</td>
+				<td>{{ form.code }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Description:</td>
+				<td>{{ form.description }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Positional T.O.:</td>
+				<td>{% lookupfield form form.to %}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Required Count:</td>
+				<td>{{ form.required_count }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Employment Status:</td>
+				<td>{% lookupfield form form.empoyment_status %}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Auto-Replenish:</td>
+				<td>{{ form.autoreplenish }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Company Structure:</td>
+				<td>{% lookupfield form form.hierarchy %}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Branch:</td>
+				<td>{% lookupfield form form.pes_location %}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Effectivity Date From:</td>
+				<td>{{ form.datefrom }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Effectivity Date To:</td>
+				<td>{{ form.dateto }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">DA Count:</td>
+				<td>{{ form.da_count }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">For Dummy:</td>
+				<td>{{ form.temp }}</td>
+			</tr>
+			<tr>
+				<td> </td>
+				<td>
+					<button type="submit" class="btn btn-small"  name="save" value="save">Save</button>
+					{% if Edit %}
+					
+					{% else %}
+						<button type="submit" class="btn btn-small" name="save" value="savenew">Save and New</button>
+					{% endif %}
+					<a class="btn btn-small" href="{% url 'rpb_list' %}">Cancel</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</form>
+<script>
+$(document).ready(function() {
+	var val = "{{ val }}";
+	var selection = $('#id_autoreplenish').val();
+	//alert(selection);
+	if (val == "True")
+	{
+		$("#id_code,#id_description").attr("readonly","readonly");
+		$(".icon-remove").hide();
+		if (selection == 1)
+		{
+			$('#id_autoreplenish option[value='+0+']').hide();
+		}
+		else if (selection == 0)
+		{
+			$('#id_autoreplenish option[value='+1+']').hide();
+		}
+	}
+});
+</script>
+{% endblock content %}

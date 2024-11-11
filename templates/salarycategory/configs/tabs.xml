@@ -1,0 +1,32 @@
+<tabs>
+	<listsalarycat>
+	    <list mod_id="kg-cm-ss-ls" mod_level="1" title="List" urlid="salarycat" target="#" urlsegment="3">
+	        <title>Salary Structure</title>
+	        <controls>
+	            <button mod_id="kg-cm-ss-ls" mod_level="2" target="salarycat_create">Add</button>
+	        </controls>
+	    </list>
+	</listsalarycat>
+	<createsalarycat>
+		<list mod_id="kg-cm-ss-ls" mod_level="1" title="List" urlid="" target="salarycat_list" urlsegment="3">
+	        <title>Salary Structure</title>
+	        <controls>
+	            
+	        </controls>
+	    </list>
+	    <list0 mod_id="kg-cm-ss-ls" mod_level="2" title="FORM" urlid="salarycat" target="#" urlsegment="3">
+	        <title>Salary Structure</title>
+	        <controls>
+	            
+	        </controls>
+	    </list0>
+	</createsalarycat>
+	<reportsalarycat>
+	    <list mod_id="kg-rp-sc" mod_level="2" title="FORM" urlid="salarycat" target="#" urlsegment="4">
+	        <title>Salary Structure Report</title>
+	        <controls>
+	        	
+	        </controls>
+	    </list>
+	</reportsalarycat>
+</tabs>

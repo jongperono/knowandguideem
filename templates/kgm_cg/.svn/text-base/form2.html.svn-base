@@ -1,0 +1,44 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+  <form action="{% url 'pes_kgm_cg_upload' %}" method="post" enctype="multipart/form-data">  
+    {% csrf_token %}
+    
+    {% if message %}
+      <div class="alert alert-info fade in">
+        {{message}}
+      </div>
+    {% endif %}
+    
+    {% if display_error %}
+      <div class="alert alert-error fade in">
+        {{ forms.cg.errors }}
+        {{ forms.cg.non_field_errors }}
+        {{ error }}
+      </div>
+    {% endif %}
+    
+    <table class="table2 table2-form">
+      <tbody>
+          <tr>
+            <td class="span2">Year</td>
+            <td>{{forms.cg.year}}</td>
+          </tr>
+          <tr>
+            <td class="span2">Score</td>
+            <td>{{forms.cg.file}}</td>
+          </tr>
+      <tr>
+          <td colspan="8">
+            <div class="btn-controls-footer">
+              <div class="btn-controls">
+                <button type="submit" class="btn btn-small"  name="save" value="save">Save </button>
+                <a href="{% url 'pes_kgm_cg_list'  %}"><button class="btn btn-small" type="button"> Cancel </button></a>
+              </div>
+            </div>
+          </td>
+        </tr>
+    </table>
+  </form>
+{% endblock content %}

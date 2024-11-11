@@ -1,0 +1,421 @@
+<!--
+  variables:
+  to_name 
+  to_dept
+  from_name
+  from_dept
+  date
+  who_name
+  who_dept
+  who_csd
+  what
+  when
+  where
+  details 
+-->
+
+<html>
+<head>
+<style>
+    @page {
+        size: letter portrait;
+        @frame header_frame {           /* Static Frame */
+            -pdf-frame-content: header_content;
+            left: 60pt; width: 490pt; top: 25pt; height: 210pt;
+        }
+        @frame content_frame {          /* Content Frame */
+            left: 60pt; width: 490pt; top: 160pt; height: 510pt;
+        }
+        @frame footer_frame {           /* Another static Frame */
+            -pdf-frame-content: footer_content;
+            left: 60pt; width: 490pt; top: 660pt; height: 150pt;
+        }
+    }
+    
+    body { font-size: 12px; font-family: Tahoma;}
+    .txt-logo { font-size: 32px; font-weight: bold;}
+    .txt-justify { text-align: justify;}
+    .fbold { font-weight: bold; }
+    .tbl-fw-1 { width: 64pt; }
+    .pb-1 { padding-bottom: 2px; }
+    .hdr { border: 1px solid black; padding: 5px;}
+    .hdr-title { text-align: center; font-weight: bold; font-size: 12px;}
+    .hdr-title2 { text-align: center; font-weight: bold; font-size: 14px;}
+    .hdr-title3 { text-align: center; font-weight: bold; font-size: 10px;}
+    p { margin-top: 5px; margin-bottom: 2px;}
+    
+</style>
+</head>
+{% load employee_info %}
+<body>
+    <!-- Content for Static Frame 'header_frame' -->
+    <div id="header_content">
+      <table style='overflow: hidden;' border='1' cellpadding='2' cellspacing='0' width="650px">
+        <tr>
+          <td style="color: blue; width: 400px; vertical-align: middle;">
+          	<div style="font-size: 37px; position: center;">
+          		<table>
+          			<tr>
+          				<td style="font-size: 15px;">&nbsp;</td>
+          			</tr>
+          			<tr>
+          				<td style="text-align: center;">
+          					<img src="{{staticroot}}intent/media/bir_logo.png" style="zoom:40%;">
+          				</td>
+          			</tr>
+          		</table>
+          	</div>
+          </td>
+          <td>
+          	<div>
+          		<table>
+          			<tr>
+          				<td>Manual Title:</td>
+          			</tr>
+          			<tr>
+          				<td>&nbsp;</td>
+          			</tr>
+          			<tr>
+          				<td style="text-align: center;">
+          					<b style="font-size: 15px;">{{ object.manual }}</b>
+          				</td>
+          			</tr>
+          			<tr>
+          				<td>&nbsp;</td>
+          			</tr>
+          		</table>
+          	</div>
+          </td>
+          <td style="width: 270px">
+          	<div>
+          		<table>
+          			<tr>
+          				<td>&nbsp; Page Number:</td>
+          			</tr>
+          			<tr>
+          				<td>&nbsp;</td>
+          			</tr>
+          			<tr>
+          				<td style="text-align: center;">
+          					{% block page_foot %}
+          						Page <pdf:pagenumber> of <pdf:pagecount>
+          					{% endblock %}
+          				</td>
+          			</tr>
+          			<tr>
+          				<td>&nbsp;</td>
+          			</tr>
+          		</table>
+          	</div>
+          </td>
+        </tr>
+        <tr>
+        	<td>
+        		<div>
+	          		<table>
+	          			<tr>
+	          				<td>Department/Division:</td>
+	          			</tr>
+	          			<tr>
+	          				<td>&nbsp;</td>
+	          			</tr>
+	          			<tr>
+	          				<td class="hdr-title">{{ object.dep_div }}</td>
+	          			</tr>
+	          			<tr>
+	          				<td>&nbsp;</td>
+	          			</tr>
+	          		</table>
+	          	</div>
+        	</td>
+        	<td>
+        		<div>
+	          		<table>
+	          			<tr>
+	          				<td>Position Title:</td>
+	          			</tr>
+	          			<tr>
+	          				<td>&nbsp;</td>
+	          			</tr>
+	          			<tr>
+	          				<td class="hdr-title2">{{ object.position }}</td>
+	          			</tr>
+	          			<tr>
+	          				<td>&nbsp;</td>
+	          			</tr>
+	          		</table>
+	          	</div>
+        	</td>
+        	<td>
+        		
+        		<div>
+	          		<table>
+	          			<tr>
+	          				<td>Document Number:</td>
+	          			</tr>
+	          			<tr>
+	          				<td>&nbsp;</td>
+	          			</tr>
+	          			<tr>
+	          				<td class="hdr-title2">&nbsp;</td>
+	          			</tr>
+	          			<tr>
+	          				<td>&nbsp;</td>
+	          			</tr>
+	          		</table>
+	          	</div>
+        	</td>
+        </tr>
+      </table>
+    </div>
+	
+    <!-- Content for Static Frame 'footer_frame' -->
+    <div id="footer_content" style="font-size: 10px;">
+    	<table style='overflow: hidden;' border='1' cellpadding='0' cellspacing='0' width="650px">
+    		<tbody>
+    			<tr>
+    				<td style="width: 100px;">
+    					<div>
+    						<table style='overflow: hidden;' border='1' cellpadding='3' cellspacing='0' width="650px">
+    							<tr>
+    								<td>
+    									<div>
+    										<table>
+    											<tr>
+    												<td>Version #:</td>
+    											</tr>
+    											<tr>
+    												<td>&nbsp;</td>
+    											</tr>
+    											<tr>
+    												<td class="hdr-title">{{ object.version }}</td>
+    											</tr>
+    											<tr>
+    												<td>&nbsp;</td>
+    											</tr>
+    										</table>
+    									</div>
+    								</td>
+    							</tr>
+    							<tr>
+    								<td>
+    									<div>
+    										<table>
+    											<tr>
+    												<td>Revision #:</td>
+    											</tr>
+    											<tr>
+    												<td>&nbsp;</td>
+    											</tr>
+    											<tr>
+    												<td class="hdr-title">{{ object.revision }}</td>
+    											</tr>
+    											<tr>
+    												<td>&nbsp;</td>
+    											</tr>
+    										</table>
+    									</div>
+    								</td>
+    							</tr>
+    						</table>
+    					</div>
+    				</td>
+    				<td style="width: 124px;">
+    					<div>
+    						<table style='overflow: hidden;' border='1' cellpadding='3' cellspacing='0' width="650px">
+    							<tr>
+    								<td>
+    									<div>
+    										<table>
+    											<tr>
+    												<td>Effective Date:</td>
+    											</tr>
+    											<tr>
+    												<td>&nbsp;</td>
+    											</tr>
+    											<tr>
+    												<td class="hdr-title">{{ object.effec_date }}</td>
+    											</tr>
+    											<tr>
+    												<td>&nbsp;</td>
+    											</tr>
+    										</table>
+    									</div>
+    								</td>
+    							</tr>
+    							<tr>
+    								<td>
+    									<div>
+    										<table>
+    											<tr>
+    												<td>Revision Date:</td>
+    											</tr>
+    											<tr>
+    												<td>&nbsp;</td>
+    											</tr>
+    											<tr>
+    												<td class="hdr-title">{{ object.rev_date }}</td>
+    											</tr>
+    											<tr>
+    												<td>&nbsp;</td>
+    											</tr>
+    										</table>
+    									</div>
+    								</td>
+    							</tr>
+    						</table>
+    					</div>
+    				</td>
+    				<td>
+    					<div>
+    						<table style="font-size: 9px;">
+    							<tr>
+    								<td>&nbsp; Approved by:</td>
+    							</tr>
+    							{% if count == 1 or count == 2 %}
+	    							<tr>
+	    								<td>&nbsp;</td>
+	    								<td>&nbsp;</td>
+	    							</tr>
+	    							<tr>
+	    								<td>&nbsp;</td>
+	    								<td>&nbsp;</td>
+	    							</tr>
+	    							<tr>
+	    								<td>&nbsp;</td>
+	    								<td>&nbsp;</td>
+	    							</tr>
+	    							<tr>
+	    								<td style="text-align: center;">{{ object.appr1 }}</td>
+	    								<td style="text-align: center;">
+	    									{% if object.appr2 %}
+	    										{{ object.appr2 }}
+	    									{% endif %}
+	    								</td>
+	    							</tr>
+	    							<tr>
+	    								<td style="text-align: center;">{% emp_position object.appr1_id %}</td>
+	    								<td style="text-align: center;">{% emp_position object.appr2_id %}</td>
+	    							</tr>
+	    							<tr>
+	    								<td style="text-align: center;">{% emp_company object.appr1_id %}</td>
+	    								<td style="text-align: center;">{% emp_company object.appr2_id %}</td>
+	    							</tr>
+	    							<tr>
+	    								<td>&nbsp;</td>
+	    								<td>&nbsp;</td>
+	    							</tr>
+	    							<tr>
+	    								<td>&nbsp;</td>
+	    								<td>&nbsp;</td>
+	    							</tr>
+	    							<tr>
+	    								<td>&nbsp;</td>
+	    								<td>&nbsp;</td>
+	    							</tr>
+    							{% elif count == 3 or count == 4 %}
+	    							<tr>
+	    								<td>&nbsp;</td>
+	    								<td>&nbsp;</td>
+	    							</tr>
+	    							<tr>
+	    								<td style="text-align: center;">{{ object.appr1 }}</td>
+	    								<td style="text-align: center;">{{ object.appr3 }}</td>
+	    							</tr>
+	    							<tr>
+	    								<td style="text-align: center;">{% emp_position object.appr1_id %}</td>
+	    								<td style="text-align: center;">{% emp_position object.appr3_id %}</td>
+	    							</tr>
+	    							<tr>
+	    								<td style="text-align: center;">{% emp_company object.appr1_id %}</td>
+	    								<td style="text-align: center;">{% emp_company object.appr3_id %}</td>
+	    							</tr>
+	    							<tr>
+	    								<td>&nbsp;</td>
+	    								<td>&nbsp;</td>
+	    							</tr>
+	    							<tr>
+	    								<td>&nbsp;</td>
+	    								<td>&nbsp;</td>
+	    							</tr>
+	    							<tr>
+	    								<td style="text-align: center;">{{ object.appr2 }}</td>
+	    								<td style="text-align: center;">
+	    									{% if object.appr4 %}
+	    										{{ object.appr4 }}
+	    									{% endif %}
+	    								</td>
+	    							</tr>
+	    							<tr>
+	    								<td style="text-align: center;">{% emp_position object.appr2_id %}</td>
+	    								<td style="text-align: center;">{% emp_position object.appr4_id %}</td>
+	    							</tr>
+	    							<tr>
+	    								<td style="text-align: center;">{% emp_company object.appr2_id %}</td>
+	    								<td style="text-align: center;">{% emp_company object.appr4_id %}</td>
+	    							</tr>
+    							{% elif count == 5 or count == 6 %}
+	    							<tr>
+	    								<td>&nbsp;</td>
+	    								<td>&nbsp;</td>
+	    								<td>&nbsp;</td>
+	    							</tr>
+	    							<tr>
+	    								<td style="text-align: center;">{{ object.appr1 }}</td>
+	    								<td style="text-align: center;">{{ object.appr3 }}</td>
+	    								<td style="text-align: center;">{{ object.appr5 }}</td>
+	    							</tr>
+	    							<tr>
+	    								<td style="text-align: center;">{% emp_position object.appr1_id %}</td>
+	    								<td style="text-align: center;">{% emp_position object.appr3_id %}</td>
+	    								<td style="text-align: center;">{% emp_position object.appr5_id %}</td>
+	    							</tr>
+	    							<tr>
+	    								<td style="text-align: center;">{% emp_company object.appr1_id %}</td>
+	    								<td style="text-align: center;">{% emp_company object.appr3_id %}</td>
+	    								<td style="text-align: center;">{% emp_company object.appr5_id %}</td>
+	    							</tr>
+	    							<tr>
+	    								<td>&nbsp;</td>
+	    								<td>&nbsp;</td>
+	    								<td>&nbsp;</td>
+	    							</tr>
+	    							<tr>
+	    								<td>&nbsp;</td>
+	    								<td>&nbsp;</td>
+	    								<td>&nbsp;</td>
+	    							</tr>
+	    							<tr>
+	    								<td style="text-align: center;">{{ object.appr2 }}</td>
+	    								<td style="text-align: center;">{{ object.appr4 }}</td>
+	    								<td style="text-align: center;">
+	    									{% if object.appr6 %}
+	    										{{ object.appr6 }}
+	    									{% endif %}
+	    								</td>
+	    							</tr>
+	    							<tr>
+	    								<td style="text-align: center;">{% emp_position object.appr2_id %}</td>
+	    								<td style="text-align: center;">{% emp_position object.appr4_id %}</td>
+	    								<td style="text-align: center;">{% emp_position object.appr6_id %}</td>
+	    							</tr>
+	    							<tr>
+	    								<td style="text-align: center;">{% emp_company object.appr2_id %}</td>
+	    								<td style="text-align: center;">{% emp_company object.appr4_id %}</td>
+	    								<td style="text-align: center;">{% emp_company object.appr6_id %}</td>
+	    							</tr>
+    							{% endif %}
+    						</table>
+    					</div>
+    				</td>
+    			</tr>
+    		</tbody>
+    	</table>
+    </div>
+
+    <!-- HTML Content -->
+    <div id="content_frame" style="line-height: 14px;">
+      {{ html|safe }}
+    </div>
+</body>
+</html>

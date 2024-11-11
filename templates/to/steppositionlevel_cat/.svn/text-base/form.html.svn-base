@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="{% if Edit %}{% url 'splcat_modify' id %}{% else %}{% url 'splcat_create' id %}{% endif %}" method="post">
+{% if display_error %}
+<br />
+	<div class="alert alert-error">
+		{{ form.errors }}
+		{{ form.non_field_errors }}
+		{{ error }}
+	</div>
+{% endif %}
+{% if message %}
+<br />
+	<div class="alert alert-success">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<h4>Success!</h4>
+		The data has been saved...
+	</div>
+{% endif %}
+	{% csrf_token %} 
+	<table class="table2 table2-form">
+		<tbody>
+			<tr>
+				<td style="width:100px;">Salary Category:</td>
+				<td>
+					<div class="alert alert-info" style="width: 240px">
+						{% if Edit %}
+						{{ Edit.salary_category.description }}
+						{% else %}
+						{{ x.description }}
+						{% endif %}
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Levels/Steps:</td>
+				<td>{{ form.step_position_level }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Basic:</td>
+				<td>{{ form.basic }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">COLA:</td>
+				<td>{{ form.cola }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Hiring Allowance:</td>
+				<td>{{ form.hiring_allowance }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Allowance:</td>
+				<td>{{ form.allowance }}</td>
+			</tr>
+			<tr>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button type="submit" class="btn btn-small" name="save" value="save">Save</button>
+					{% if Edit %}
+					
+					{% else %}
+						<button type="submit" class="btn btn-small" name="save" value="savenew">Save and New</button>
+					{% endif %}
+					{% if Edit %}
+						<a class="btn btn-small" href="{% url 'splcat_list' id2 %}">Cancel</a>
+					{% else %}
+						<a class="btn btn-small" href="{% url 'splcat_list' id %}">Cancel</a>
+					{% endif %}
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</form>
+{% endblock content %}

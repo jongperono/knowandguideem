@@ -1,0 +1,9 @@
+<menu>
+	<link mod_id="rp"  target="#" role="blank" urlid="#" urlsegment="3"></link>
+	<link mod_id="kg-rp-rs" target="kgm_rpb_report2" role="menu" urlid="rpb" urlsegment="4" title="RPB Reports"></link>
+	<link mod_id="kg-rp-pc" target="positionclassificationreport" role="menu" urlid="positionclassification" urlsegment="4" title="Position"></link>
+	<link mod_id="kg-rp-sc" target="salarycat_report" role="menu" urlid="salarycat" urlsegment="4" title="Salary Category"></link>
+	<link mod_id="kg-rp-cs" target="kgm_companystructure_report" role="menu" urlid="hierarchy" urlsegment="4" title="Company Structure"></link>
+	<link mod_id="kg-rpkg-cg" target="pes_kgm_cg_masterlist" role="menu" urlid="cg" urlsegment="4" title="Cash Gift Masterlist"></link>
+	<link mod_id="kg-rp-up" target="kgm_report_generic" role="menu" urlid="generic" urlsegment="4" title="Update Code/Description"></link>
+</menu>

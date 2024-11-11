@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% load custom_fields %}
+{% block content %}
+<form action="{% if Edit %}{% url 'to_modify' id %}{% else %}{% url 'to_create' %}{% endif %}" method="post">
+{% if display_error %}
+<br />
+	<div class="alert alert-error">
+		{{ forms.to.errors }}
+		{{ forms.to.non_field_errors }}
+		{{ forms.to_class.errors }}
+		{{ forms.to_class.non_field_errors }}
+		{{ error }}
+	</div>
+{% endif %}
+{% if message %}
+<br />
+	<div class="alert alert-success">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<h4>Success!</h4>
+		The data has been saved...
+	</div>
+{% endif %}
+	{% csrf_token %} 
+	<table class="table2 table2-form">
+		<tbody>
+			<tr>
+				<td style="width:100px;">Code:</td>
+				<td>{{ forms.to.code }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Name:</td>
+				<td>{{ forms.to.description }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Job Description:</td>
+				<td>{% lookupfield forms.to forms.to.jd %}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Parent:</td>
+				<td>{% lookupfield forms.to forms.to.parent %}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Position Function:</td>
+				<td>{{ forms.to.position_func }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="table2 table2-form">
+      	<tbody>
+      		<tr>
+        		<td style="font-size:15px;">Detail/s</td>
+        	</tr>
+        	<tr>
+  				<th>Code</th>
+  				<th>Description</th>
+  				<th>Band/Level</th>
+  				<th>Status</th>
+  				<th>Category</th>
+  				<th>&nbsp;</th>
+        	</tr>
+    	{{ forms.to_class.management_form }}
+	  		{% for dtls in forms.to_class %}
+	      		{{ dtls.id }} 
+	          	<tr class="table_org_class" id="table_org_class-{{forloop.counter}}">
+	          		<td>   
+	          			{% if Edit %}
+	          				{{dtls.code}}
+	          			{% else %} 
+	          				{{dtls.code}}
+	          				<!--
+		          			<div class="input-prepend input-append">
+	      						<span class="add-on"> </span>
+	      						
+	    					</div>
+	    					-->
+    					{% endif %}
+    				</td>
+		            <td>{{ dtls.description }}</td>
+		            <td>{% lookupfield dtls dtls.start_step_position_level %}</td>
+		            <td>{{ dtls.status }}</td>
+		            <td>{{ dtls.category }}</td>
+	            	<td>
+		                {% if dtls.instance.id %}
+		                	<a class="btn btn-mini btn-danger removecloneMore"><i class="icon-minus"></i></a>
+		                	<span class="hidden IntEnt-delete">{{ dtls.DELETE  }}</span>    
+		              	{% else %}
+		                	<a class="btn btn-mini btn-primary cloneform"><i class="icon-plus"></i></a>
+		              	{% endif %}
+	            	</td>      
+	          	</tr>
+	        {% endfor %}
+	        <br/>
+	    	<tr>
+				<td>
+					<button type="submit" class="btn btn-small" name="save" value="save">Save</button>
+					{% if Edit %}
+					
+					{% else %}
+						<button type="submit" class="btn btn-small" name="save" value="savenew">Save and New</button>
+					{% endif %}
+					<a class="btn btn-small" href="{% url 'to_list' %}">Cancel</a>
+				</td>
+				<td> </td>
+				<td> </td>
+			</tr>
+		</tbody>
+	</table>
+</form>
+<script>
+	var edit = '{{Edit}}';
+	//alert($('#id_to-code').val());
+	if (edit)
+	{
+		//alert($('#id_to-code').val());
+		//var tocode = '{{ forms.to.code }}';
+		//$('.code').removeClass('span1');
+		//$('.code').addClass('span2');
+	}
+	$('#id_to-code').keyup(function (e){
+		var value = $(this).val();
+		$('.add-on').text(value);
+	})
+</script>
+{% endblock content %}

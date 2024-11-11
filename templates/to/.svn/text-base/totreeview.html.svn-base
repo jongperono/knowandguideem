@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load totreeview %}
+{% block content %}
+{% if error %}
+<br />
+	<div class="alert alert-error">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		{{ errors }}
+	</div>
+{% endif %}
+	<br />
+	{% autoescape off %}
+   		{% pes_render_totree request %}
+   	{% endautoescape %}
+   	<br/>
+{% endblock content %}

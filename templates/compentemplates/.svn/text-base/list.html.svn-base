@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+{% load pesgrids %}
+{% load humanize %}
+{% if display_error %}
+<br />
+	<div class="alert alert-error">
+		{{ form.errors }}
+		{{ form.non_field_errors }}
+		{{ error }}
+	</div>
+{% endif %}
+{% if hdr %}
+	<div class="alert alert-info">
+		{{ hdr.desc }}
+	</div>
+{% endif %}
+{% page_render_gridview request page.gridlist page.feature page.gridgroup page.gridlist_count %}
+{% endblock content %}

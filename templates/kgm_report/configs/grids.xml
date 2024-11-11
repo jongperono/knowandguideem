@@ -1,0 +1,104 @@
+<grid>
+    <grid numcol="14">
+        <col role="counter">
+            <label>#</label>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>text</type>
+            <parname>id</parname>
+            <label>code</label>
+            <modelfield>code</modelfield>
+            <target>rpb_info</target>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>text</type>
+            <parname>desc</parname>
+            <label>description</label>
+            <modelfield>description</modelfield>
+        </col>
+        <col role="field" modelproperty="true" filter="true" filtercustom="true">
+			<label>Positional TO</label>
+			<type>text</type>
+			<parname>n</parname>
+			<modelfield>to_name</modelfield>
+		</col>
+        <col role="field" filter="true" sort="true">
+            <type>number</type>
+            <parname>req</parname>
+            <class>gridfiltersize-small</class>
+            <label>Required</label>
+            <modelfield>required_count</modelfield>
+        </col>
+        <col role="field" modelproperty="true" filter="false">
+            <type>number</type>
+            <parname>current</parname>
+            <class>gridfiltersize-small</class>
+            <label>Present</label>
+            <modelfield>present_count</modelfield>
+        </col>
+        <col role="field" modelproperty="true">
+            <type>text</type>
+            <parname>bal</parname>
+            <label>Balance</label>
+            <modelfield>balance_count</modelfield>
+        </col>
+        <col role="field" filter="true" sort="true" foreignkey="true" foriegnkeylabel="description">
+            <type>text</type>
+            <parname>es</parname>
+            <class>gridfiltersize-small</class>
+            <label>Employement Status</label>
+            <modelfield>empoyment_status</modelfield>
+        </col>
+        <col role="field" modelproperty="true">
+            <type>text</type>
+            <parname>ar</parname>
+            <class>gridfiltersize-small</class>
+            <label>auto-replenish</label>
+            <modelfield>auto</modelfield>
+        </col>
+        <col role="field" modelproperty="true" filter="true" filtercustom="true">
+            <type>text</type>
+            <parname>i</parname>
+            <label>Company Structure</label>
+            <modelfield>hierarchy_tree</modelfield>
+        </col>
+        <col role="field" foreignkey="true" foriegnkeylabel="branch_code" filter="true" sort="true">
+            <type>text</type>
+            <parname>branch</parname>
+            <label>Branch</label>
+            <modelfield>pes_location</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>text</type>
+            <parname>frm</parname>
+            <label>Effectivity Date From</label>
+            <modelfield>datefrom</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>text</type>
+            <parname>to</parname>
+            <label>Effectivity Date To</label>
+            <modelfield>dateto</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+        <col role="field" filter="false" sort="false" modelproperty="true">
+            <type>text</type>
+            <parname>da</parname>
+            <class>gridfiltersize-small</class>
+            <label>DA</label>
+            <modelfield>da_totalcount</modelfield>
+        </col>
+        <col role="controls" filter="true" modelproperty="true" filter-submit="true" mod_id="kg-rb-ls">
+	        <type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		        <modelfield mod_level="2">ctrlbtn_w</modelfield>
+		        <modelfield mod_level="1">ctrlbtn_r</modelfield>
+	        </actions>
+    	</col>
+    </grid>
+</grid>

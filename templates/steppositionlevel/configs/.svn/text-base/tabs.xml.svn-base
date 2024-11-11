@@ -1,0 +1,32 @@
+<tabs>
+    <creategroup>
+	    <create mod_id="cb-be-mo-av" mod_level="1" title="Create" id="create" target="peskgmsteppositionlevelcreate">
+	        <title>test</title>
+	    </create>
+	</creategroup>
+	<listgroup>
+	    <list mod_id="kg-po-bl-ls" mod_level="1" title="List" id="list" target="steppositionlevellist" urlid="index" urlsegment="4">
+	        <title>Band/Level Configuration - List</title>
+	        <controls>
+	            <button mod_id="kg-po-bl-ls" mod_level="2" target="createstepposition">Add</button>
+	        </controls>
+	    </list>
+	</listgroup>
+	<formgroup>
+		<list2 mod_id="kg-po-bl-ls" mod_level="1" title="List" id="list" target="steppositionlevellist" urlid="index" urlsegment="4">
+	        <title>Position Level Configuration</title>
+	        <controls>
+	        </controls>
+	    </list2>
+	    <tab2 mod_id="kg-po-bl-ls" mod_level="2" title="Form" id="details" target="#" urlid="form" urlsegment="4">
+            <title>Band/Level Configuration Form</title>
+            <controls>
+            </controls>
+        </tab2>
+	</formgroup>
+</tabs>
+
+
+
+
+

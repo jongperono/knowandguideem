@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load custom_fields %}
+
+{% block content %}
+  <form action="{% if edit %} {% url 'pes_kgm_cg_edit' id %} {% else %} {% url 'pes_kgm_cg_add' %} {% endif %}" method="post">  
+    {% csrf_token %}
+    
+    {% if message %}
+      <div class="alert alert-info fade in">
+        {{message}}
+      </div>
+    {% endif %}
+    
+    {% if display_error %}
+      <div class="alert alert-error fade in">
+        {{ forms.cg.errors }}
+        {{ forms.cg.non_field_errors }}
+        {{ error }}
+      </div>
+    {% endif %}
+    
+    <div class="alert alert-info fade in">
+    	Encoding of rating is from {{ LOCK_PERIOD.0 }} to {{ LOCK_PERIOD.1 }}
+    </div>
+    <table class="table2 table2-form">
+      <tbody>
+          <tr>
+            <td class="span2">Person</td>
+            <td>
+            	{% if person %}
+	            	<div class="span4 lookUp unincludeclone">
+						<span class="label label-info">
+							#{{ person.company_id }} - {{ person.fullname }}
+						</span>
+					</div>
+	        		<input id="id_person" class="span4" type="text" name="person" readonly="readonly" value="{{ person.id }}" style="display: none;">
+            	{% else %}
+	            	{% if edit %}
+	            		<div class="span4 lookUp unincludeclone">
+	            			<span class="label label-info">
+	            				<a class="lookup-remove-selected-id" name="person-desc"></a>
+	            				{{name}}
+	            			</span>
+	            		</div>
+	            	{% else %}
+	            		{% lookupfield forms.cg forms.cg.person %}
+	            	{% endif %}
+            	{% endif %}
+            </td>
+          <tr>
+            <td class="span2">Year</td>
+            <td>{{forms.cg.year}}</td>
+          </tr>
+          {% if susp_access %}
+          <tr>
+            <td class="span2">Suspensions</td>
+            <td>{{forms.cg.suspension}}</td>
+          </tr>
+          {% else %}
+          <tr style="display: none;">
+            <td class="span2">Suspensions</td>
+            <td>{{forms.cg.suspension}}</td>
+          </tr>
+          {% endif %}
+          <tr>
+            <td class="span2">Score</td>
+            <td>{{forms.cg.score}}</td>
+          </tr>
+      <tr>
+          <td colspan="8">
+            <div class="btn-controls-footer">
+              <div class="btn-controls">
+                <button type="submit" class="btn btn-small"  name="save" value="save">Save </button>
+                <a href="{% url 'pes_kgm_cg_list'  %}"><button class="btn btn-small" type="button"> Cancel </button></a>
+              </div>
+            </div>
+          </td>
+        </tr>
+    </table>
+  </form>
+  <script>
+  	var currentTime = new Date()
+  	var year = currentTime.getFullYear()
+  	$("#id_year option").each(function(){
+		var text = $(this).val();
+	  	if (text != year )
+	  	{
+	  		$(this).hide();
+	  	}
+	});
+  </script>
+{% endblock content %}

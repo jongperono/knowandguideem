@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<form class="form-horizontal" action="{% url 'rpb_info_upload' id  %}" method="post" enctype="multipart/form-data">
+{% if error %}
+<br />
+	<div class="alert alert-error">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		{{ errors }}
+	</div>
+{% endif %}
+	{% csrf_token %} 
+	<table class="table2 table2-form">
+		<tbody>
+			<tr>
+				<td style="width:100px;">Given Name:</td>
+				<td>{{ form.filename }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">File:</td>
+				<td>
+				  <div class="fileupload fileupload-new" data-provides="fileupload">
+				    <span class="btn btn-file btn-primary btn-small">
+				    <span class="fileupload-new">Select file</span>
+				    <span class="fileupload-exists">Change</span>
+				    {{ form.file }}</span> 
+				    <span class="fileupload-preview"></span> 
+                     <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">&#x2716;</a>
+                  </div>
+				</td>
+			</tr>
+			<tr>
+				<td> </td>
+				<td>
+					<button type="submit" class="btn btn-small">Upload</button>
+					<a class="btn btn-small" href="{% url 'rpb_info' id %}">Cancel</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</form>
+{% endblock content %}

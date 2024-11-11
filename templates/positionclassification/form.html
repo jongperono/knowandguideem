@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load custom_fields %}
+{% block content %}
+	<form action="{% if edit %} {% url 'positionclassificationedit' id  %}{% else %}{% url 'positionclassificationcreate'  %} {% endif %}" method="post">	
+	{% csrf_token %}
+	
+			{% if message %}
+		<div class="alert alert-info fade in">
+			{{message}}
+		</div>
+ 			{% endif %}
+	
+	
+
+		{% if display_error %}
+		<div class="alert alert-error fade in">
+		{{ form.errors }}
+		{{ form.non_field_errors }}
+		{{error}}
+
+		</div>
+	 {% endif %}
+
+<table class="table2 table2-form">
+           <tbody>
+           		<tr>
+	               <td style="width:150px;">Code:</td>
+	                <td>{{form.code}}</td>
+	              
+	             </tr>
+	             <tr>
+	               <td style="width:150px;">Position Title:</td>
+	                <td>{{form.description}}</td>
+	              
+	             </tr>
+	             
+	             <tr>
+	               <td style="width:150px;">Positional TO:</td>
+	               <td>{% lookupfield form form.to %}</td>
+	             </tr>
+	             
+	               <tr>
+	               <td style="width:150px;">Band/Level Category:</td>
+	               <td>{% lookupfield form form.start_step_position_level %}</td>
+	             </tr>
+             	<tr>
+	               <td style="width:150px;">Status:</td>
+	                <td>{{ form.status }}</td>
+	              
+	             </tr>
+             	<tr>
+	               <td style="width:150px;">Category:</td>
+	                <td>{{ form.category }}</td>
+	              
+	             </tr>
+             
+	        
+
+              <tr>
+              	
+              	<td>
+              	</td>
+              	
+              	<td>
+                 <div class="btn-controls-footer">
+                 	
+             <div class="btn-controls">
+             	
+             	<button type="submit" class="btn btn-small"  name="save" value="save">Save </button>
+             	<button type="submit" class="btn btn-small"  name="save" value="savenew">Save &amp; New </button>
+             	
+             	    <a href="{% url 'positionclassificationlist'  %}"><button class="btn btn-small" type="button"> Cancel </button></a>
+           
+                 
+                
+             </div>
+           
+           </div>
+           </tr>
+           </table>
+
+</form>
+
+
+
+
+{% endblock content %}

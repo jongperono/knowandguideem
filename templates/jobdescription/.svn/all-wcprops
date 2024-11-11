@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/intent/!svn/ver/12894/trunk/source/pes/knowandguideem/templates/jobdescription
+END
+jobdescform.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/intent/!svn/ver/12894/trunk/source/pes/knowandguideem/templates/jobdescription/jobdescform.html
+END
+jdarchive.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/intent/!svn/ver/12467/trunk/source/pes/knowandguideem/templates/jobdescription/jdarchive.html
+END
+jdupload.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/intent/!svn/ver/3265/trunk/source/pes/knowandguideem/templates/jobdescription/jdupload.html
+END
+jobdesceditform.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/intent/!svn/ver/12639/trunk/source/pes/knowandguideem/templates/jobdescription/jobdesceditform.html
+END
+jobdesclist.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/intent/!svn/ver/3150/trunk/source/pes/knowandguideem/templates/jobdescription/jobdesclist.html
+END
+jdinfo.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/intent/!svn/ver/12467/trunk/source/pes/knowandguideem/templates/jobdescription/jdinfo.html
+END
+jdprint.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/intent/!svn/ver/12894/trunk/source/pes/knowandguideem/templates/jobdescription/jdprint.html
+END

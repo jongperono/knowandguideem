@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+  <form action="{% if Edit %}{% url 'pes_kgm_cg_tableview_edit' uid %}{% else %}{% url 'pes_kgm_cg_tableview_add' id %}{% endif %}" method="post">  
+    {% csrf_token %}
+    {% if display_error %}
+      <div class="alert alert-error fade in">
+        {{ form.errors }}
+        {{ form.non_field_errors }}
+        {{ error }}
+      </div>
+    {% endif %}
+    <table class="table2 table2-form">
+      <tbody>
+          <tr>
+          	<td class="span2">Rate</td>
+            <td>{{form.rate_id}}</td>
+          </tr>
+          <tr>
+          	<td class="span2">Level/Step From</td>
+            <td>{{form.lvl_f}}</td>
+          </tr>
+          <tr>
+          	<td class="span2">Level/Step To</td>
+            <td>{{form.lvl_t}}</td>
+          </tr>
+          <tr>
+          	<td class="span2">Band/Level From</td>
+            <td>{{form.lvl2_f}}</td>
+          </tr>
+          <tr>
+          	<td class="span2">Band/Level To</td>
+            <td>{{form.lvl2_t}}</td>
+          </tr>
+          <tr>
+            <td class="span2">Amount</td>
+            <td>{{form.amount}}</td>
+          </tr>
+          <tr>
+            <td class="span2">Additional Rate</td>
+            <td>{{form.plus_rate_id}}</td>
+          </tr>
+          <tr>
+            <td class="span2">Additional Amount</td>
+            <td>{{form.plus_amount}}</td>
+          </tr>
+      <tr>
+          <td colspan="8">
+            <div class="btn-controls-footer">
+              <div class="btn-controls">
+                <button type="submit" class="btn btn-small"  name="save" value="save">Save </button>
+                <a href="{% url 'pes_kgm_cg_tableview' id  %}"><button class="btn btn-small" type="button"> Cancel </button></a>
+              </div>
+            </div>
+          </td>
+        </tr>
+    </table>
+  </form>
+{% endblock content %}

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<form action="{% if edit %} {% url 'editposition' id  %}{% else %}{% url 'createposition'  %} {% endif %}" method="post">	
+	{% csrf_token %}
+
+			{% if message %}
+		<div class="alert alert-info">
+			{{message}}
+		</div>
+ 			{% endif %}
+	
+	
+
+		{% if display_error %}
+		<div class="alert alert-error">
+		{{ form.errors }}
+		{{ form.non_field_errors }}
+		{{error}}
+
+		</div>
+	 {% endif %}
+
+<table class="table2 table2-form">
+           <tbody>
+           		<tr>
+	               <td style="width:80px;">Code:</td>
+	               <td>{{form.code}}</td>
+	             </tr>
+	             <tr>
+	               <td style="width:80px;">Description:</td>
+	               <td>{{form.description}}</td>
+	             </tr>
+	             <tr>
+	               <td style="width:80px;">Sequence:</td>
+	               <td>{{form.sequence}}</td>
+	             </tr>
+             <!--
+              <tr>
+	               <td style="width:80px;">Sequence:</td>
+	               <td><input id="id_sequence" class="span2 lookUp" type="text" placeholder="" value="{{sequence}}" required="true" name="sequence" autocomplete="off"/></td>
+	             </tr>
+	        -->
+
+              <tr>
+              	
+              	<td>
+              	</td>
+              	
+              	<td>
+                 <div class="btn-controls-footer">
+                 	
+             <div class="btn-controls">
+             	
+             	<button type="submit" class="btn btn-small"  name="save" value="save">Save </button>
+             	<button type="submit" class="btn btn-small"  name="save" value="savenew">Save &amp; New </button>
+             	
+             	    <a href="{% url 'positionlevellist'  %}"><button class="btn btn-small" type="button"> Cancel </button></a>
+           
+                 
+                
+             </div>
+           
+           </div>
+           </tr>
+           </table>
+
+</form>
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,79 @@
+<grid>
+	<subgrid numcol="7">
+		<col role="counter">
+			<lable>#</lable>
+		</col>
+		<col role="field" filter="true" sort="true">
+			<label>Branch Code</label>
+			<type>text</type>
+			<parname>branch_code</parname>
+			<modelfield>branch_code</modelfield>
+		</col>
+		<col role="field" filter="true" sort="true" foreignkey="true" foriegnkeylabel="description">
+			<label>Branch Name</label>
+			<type>text</type>
+			<parname>location</parname>
+			<modelfield>location</modelfield>
+		</col>
+		<col role="field" filter="true" sort="true">
+			<label>GP Code</label>
+			<type>text</type>
+			<parname>gp_code</parname>
+			<modelfield>gp_code</modelfield>
+			<class>gridfiltersize-small</class>
+		</col>
+		<col role="field" filter="true" sort="true">
+			<label>LLLLL</label>
+			<type>text</type>
+			<parname>LLL</parname>
+			<modelfield>LLL</modelfield>
+			<class>gridfiltersize-small</class>
+		</col>
+		<col role="field" modelproperty="true" filter="true" filtercustom="true">
+      		<label>Type</label>
+		    <type>text</type>
+		    <parname>type</parname>
+		    <modelfield>type</modelfield>
+		    <class>gridfiltersize-small</class>
+    	</col>
+		<col role="field" filter="true" sort="true" foreignkey="true" foriegnkeylabel="description">
+			<label>Area</label>
+			<type>text</type>
+			<parname>region</parname>
+			<modelfield>region</modelfield>
+			<class>gridfiltersize-small</class>
+		</col>
+		
+
+	<col role="field" filter="true" sort="true" modelproperty="true" modelproperty-field="sub_area__description">
+			<label>Sub-Area</label>
+			<type>text</type>
+			<parname>sub_area_desc</parname>
+			<modelfield>sub_area_desc</modelfield>
+			<class>gridfiltersize-small</class>
+		</col>
+		
+		<col role="field" modelproperty="true" filter="true" filtercustom="true">
+			<label>Company</label>
+			<type>text</type>
+			<parname>company</parname>
+			<modelfield>partyname</modelfield>
+		</col>
+		<col role="field" filter="true" sort="true">
+			<label>address</label>
+			<type>text</type>
+			<parname>address</parname>
+			<modelfield>address</modelfield>
+		</col>
+		<col role="controls" filter="true" modelproperty="true" filter-submit="true" mod_id="pi-cs-br-ls">
+	        <type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		        <modelfield mod_level="2">ctrlbtn_w</modelfield>
+		        <modelfield mod_level="1">ctrlbtn_r</modelfield>
+	        </actions>
+    	</col>
+	</subgrid>	
+</grid>

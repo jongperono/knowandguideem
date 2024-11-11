@@ -1,0 +1,130 @@
+<tabs>
+    <createto>
+    	<list0 mod_id="kg-po-ti-ls" mod_level="1" title="List" urlid="" urlsegment="4" target="to_list" urlargs="argset1">
+	        <title>Table of Organization</title>
+	        <controls>
+	            
+	        </controls>
+	    </list0>
+	    <create mod_id="kg-po-ti-ls" mod_level="2" title="FORM" target="#" urlid="to" urlsegment="3" urlargs="#">
+	        <title>Create Table of Organization</title>
+	      	<controls>
+	        </controls>
+	    </create>
+	    <list1 mod_id="kg-po-ti-tv" mod_level="1" title="TreeView" urlid="" urlsegment="4" target="to_treeview" urlargs="argset1">
+	        <title>Table of Organization</title>
+	        <controls>
+	            
+	        </controls>
+	    </list1>
+	    <archive mod_id="kg-po-ti-ac" mod_level="1" title="Archive" urlid="" target="to_archive" urlsegment="3">
+	        <title>Table of Organization</title>
+	    </archive>
+	</createto>
+	<createto1>
+		<list0 mod_id="kg-po-ti-ls" mod_level="1" title="List" urlid="" urlsegment="4" target="to_list" urlargs="argset1">
+	        <title>Table of Organization</title>
+	        <controls>
+	        </controls>
+	    </list0>
+	    <list1 mod_id="kg-po-ti-tv" mod_level="1" title="TreeView" urlid="" urlsegment="4" target="to_treeview" urlargs="argset1">
+	        <title>Table of Organization</title>
+	        <controls>
+	        </controls>
+	    </list1>
+	    <create mod_id="kg-po-ti-ls" mod_level="2" title="FORM" target="#" urlid="treeview" urlsegment="4" urlargs="#">
+	        <title>Create Table of Organization</title>
+	      	<controls>
+	        </controls>
+	    </create>
+	    <archive mod_id="kg-po-ti-ac" mod_level="1" title="Archive" urlid="" target="to_archive" urlsegment="3">
+	        <title>Table of Organization</title>
+	    </archive>
+	</createto1>
+	<listgroup>
+		<list0 mod_id="kg-po-ti-ls" mod_level="1" title="List" urlid="index" urlsegment="4" target="to_list" urlargs="argset1">
+	        <title>Table of Organization</title>
+	        <controls>
+	            <button mod_id="kg-po-ti-ls" mod_level="2" target="to_create">Add</button>
+	        </controls>
+	    </list0>
+	    <list1 mod_id="kg-po-ti-tv" mod_level="1" title="TreeView" urlid="treeview" urlsegment="4" target="to_treeview" urlargs="argset1">
+	        <title>Table of Organization</title>
+	        <controls>
+	            <button mod_id="kg-po-ti-ls" mod_level="2" target="to_create">Add</button>
+	        </controls>
+	    </list1>
+	    <archive mod_id="kg-po-ti-ac" mod_level="1" title="Archive" urlid="" target="to_archive" urlsegment="3">
+	        <title>Table of Organization</title>
+	    </archive>
+	</listgroup>
+	<toinfo>
+    	<list0 mod_id="kg-po-ti-ls" mod_level="1" title="List" urlid="" target="to_list" urlsegment="3" urlargs="#">
+	        <title>Positional T.O.</title>
+	        <controls>
+	            <button target="to_info_upload" urlargs="urlarg1">Upload</button>
+	        </controls>
+	    </list0>
+	    <list1 mod_id="kg-po-ti-tv" mod_level="1" title="TreeView" urlid="" urlsegment="4" target="to_treeview" urlargs="argset1">
+	        <title>Table of Organization</title>
+	        <controls>
+	            
+	        </controls>
+	    </list1>
+	    <archive mod_id="kg-po-ti-ac" mod_level="1" title="Archive" urlid="" target="to_archive" urlsegment="3">
+	        <title>Table of Organization</title>
+	    </archive>
+	    <create mod_id="kg-po-ti-ls" mod_level="1" title="Detail" urlid="to" target="#" urlsegment="3">
+	        <title>Positional T.O. Uploaded File(s)</title>
+	       	<controls>
+	            
+	        </controls>
+	    </create>
+	</toinfo>
+	<toupload>
+    	<list0 mod_id="kg-po-ti-ls" mod_level="1" title="List" urlid="" target="to_list" urlsegment="3" urlargs="#">
+	        <title>Positional T.O.</title>
+	        <controls>
+	            
+	        </controls>
+	    </list0>
+	    <list1 mod_id="kg-po-ti-tv" mod_level="1" title="TreeView" urlid="" urlsegment="4" target="to_treeview" urlargs="argset1">
+	        <title>Table of Organization</title>
+	        <controls>
+	            
+	        </controls>
+	    </list1>
+	    <create0 mod_id="kg-po-ti-ls" mod_level="1" title="Detail" urlid="" target="to_info" urlsegment="3" urlargs="urlarg1">
+	        <title>Job Description Uploaded File(s)</title>
+	       	<controls>
+	            
+	        </controls>
+	    </create0>
+	    <create mod_id="kg-po-ti-ls" mod_level="2" title="Upload" urlid="to" target="#" urlsegment="3">
+	        <title>Upload T.O. File</title>
+	        <controls>
+	            
+	        </controls>
+	    </create>
+	</toupload>
+	<toarchive>
+		<list0 mod_id="kg-po-ti-ls" mod_level="1" title="List" urlid="" target="to_list" urlsegment="3" urlargs="#">
+	        <title>Positional T.O.</title>
+	        <controls>
+	            
+	        </controls>
+	    </list0>
+	    <list1 mod_id="kg-po-ti-tv" mod_level="1" title="TreeView" urlid="" urlsegment="4" target="to_treeview" urlargs="argset1">
+	        <title>Table of Organization</title>
+	        <controls>
+	            
+	        </controls>
+	    </list1>
+	    <create mod_id="kg-po-ti-ac" mod_level="1" title="Archive" urlid="to" target="#" urlsegment="3">
+	        <title>Upload T.O. File</title>
+	        <controls>
+	            
+	        </controls>
+	    </create>
+	</toarchive>
+</tabs>

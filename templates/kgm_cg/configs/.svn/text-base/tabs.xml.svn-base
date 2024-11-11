@@ -1,0 +1,233 @@
+<tabs>
+	<cmdtltbl>
+		<list title="List" target="pes_kgm_cg_cmpy_dtl" urlid="list" urlsegment="4">
+          <title>New Cash Gift Company List</title>
+          <controls>
+          </controls>
+      </list>
+      <list3 title="Dates" target="pes_kgm_cg_new_lockdate" urlid="lockdate" urlsegment="4">
+          <title>New Cash Gift Date Details</title>
+          <controls>
+          </controls>
+      </list3>
+      <rate title="Rating" target="pes_kgm_cg_new_ratetbl" urlid="rating" urlsegment="4">
+          <title>New Cash Gift Rating</title>
+          <controls>
+          	
+          </controls>
+      </rate>
+      
+	</cmdtltbl>
+	<cmdtltbledit>
+		<list title="List" target="pes_kgm_cg_cmpy_dtl" urlid="list" urlsegment="4">
+          <title>New Cash Gift Company List</title>
+          <controls>
+          </controls>
+      </list>
+      <list2 title="Form" target="#" urlid="listedit" urlsegment="4">
+          <title>New Cash Gift Company Form</title>
+          <controls>
+          </controls>
+      </list2>
+      <list3 title="Dates" target="pes_kgm_cg_new_lockdate" urlid="lockdate" urlsegment="4">
+          <title>New Cash Gift Lock Date Details</title>
+          <controls>
+          </controls>
+      </list3>     
+      <list4 title="Rating" target="pes_kgm_cg_new_ratetbl" urlid="rating" urlsegment="4">
+          <title>New Cash Gift Rating</title>
+          <controls>
+          	
+          </controls>
+      </list4>
+	</cmdtltbledit>
+	
+	<ratetbledit>
+		<list title="List" target="pes_kgm_cg_cmpy_dtl" urlid="list" urlsegment="4">
+          <title>New Cash Gift Company List</title>
+          <controls>
+          </controls>
+      </list>
+      <list3 title="Dates" target="pes_kgm_cg_new_lockdate" urlid="lockdate" urlsegment="4">
+          <title>New Cash Gift Lock Date Details</title>
+          <controls>
+          </controls>
+      </list3>
+      <rate title="Rating" target="pes_kgm_cg_new_ratetbl" urlid="rating" urlsegment="4">
+          <title>New Cash Gift Rating</title>
+          <controls>
+          </controls>
+      </rate>
+      <rateform title="Rating" target="#" urlid="ratingedit" urlsegment="4">
+          <title>New Cash Gift Rating Form</title>
+          <controls>
+          </controls>
+      </rateform>
+	</ratetbledit>
+	
+    <cgtbl>
+	  <list title="List" target="pes_kgm_cg_table" urlid="list" urlsegment="4">
+          <title>Cash Gift Table List</title>
+          <controls>
+          </controls>
+      </list>
+      <list3 title="Lock Date" target="pes_kgm_cg_lockdate" urlid="lockdate" urlsegment="4">
+          <title>Cash Gift Table Details</title>
+          <controls>
+          </controls>
+      </list3>
+      <rate title="Rating" target="pes_kgm_cg_ratetbl" urlid="rating" urlsegment="4">
+          <title>Cash Gift Rating</title>
+          <controls>
+          	<button mod_id="kg-pms-cg" mod_level="3" target="pes_kgm_cg_ratetbl_add">Add</button>
+          </controls>
+      </rate>
+	</cgtbl>
+	<ratingtbl>
+	  <list title="List" target="pes_kgm_cg_table" urlid="list" urlsegment="4">
+          <title>Cash Gift Table List</title>
+          <controls>
+          </controls>
+      </list>
+      <list3 title="Lock Date" target="pes_kgm_cg_lockdate" urlid="lockdate" urlsegment="4">
+          <title>Cash Gift Table Details</title>
+          <controls>
+          </controls>
+      </list3>
+      <rate title="Rating" target="pes_kgm_cg_ratetbl" urlid="rating" urlsegment="4">
+          <title>Cash Gift Rating</title>
+          <controls>
+          </controls>
+      </rate>
+      <rateform title="Rating" target="#" urlid="ratingadd" urlsegment="4">
+          <title>Cash Gift Rating Form</title>
+          <controls>
+          </controls>
+      </rateform>
+	</ratingtbl>
+	<cgtbledit>
+	  <list title="List" target="pes_kgm_cg_table" urlid="list" urlsegment="4">
+          <title>Cash Gift Table List</title>
+          <controls>
+          </controls>
+      </list>
+      <list2 title="Form" target="#" urlid="listedit" urlsegment="4">
+          <title>Cash Gift Table Details</title>
+          <controls>
+          </controls>
+      </list2>
+      <list3 title="Lock Date" target="pes_kgm_cg_lockdate" urlid="lockdate" urlsegment="4">
+          <title>Cash Gift Table Details</title>
+          <controls>
+          </controls>
+      </list3>
+	</cgtbledit>
+	<cgtblvwgroup>
+	  <list title="List" target="pes_kgm_cg_table" urlid="list" urlsegment="4">
+          <title>Cash Gift Table List</title>
+          <controls>
+          </controls>
+      </list>
+      <list2 title="Details" target="pes_kgm_cg_tableview" urlid="view" urlsegment="4" urlargs="uid">
+          <title>Cash Gift Table Details</title>
+          <controls>
+          </controls>
+      </list2>
+      <list3 title="Form" target="#" urlid="viewform" urlsegment="4">
+          <title>Cash Gift Table Details Form</title>
+          <controls>
+          </controls>
+      </list3>
+      <lock title="Lock Date" target="pes_kgm_cg_lockdate" urlid="lockdate" urlsegment="4">
+          <title>Cash Gift Table Details</title>
+          <controls>
+          </controls>
+      </lock>
+	</cgtblvwgroup>
+	<cgtblvw>
+	  <list title="List" target="pes_kgm_cg_table" urlid="list" urlsegment="4">
+          <title>Cash Gift Table List</title>
+          <controls>
+          </controls>
+      </list>
+      <list2 title="Details" target="#" urlid="view" urlsegment="4">
+          <title>Cash Gift Table Details</title>
+          <controls>
+              <button mod_id="kg-pms-cg" mod_level="3" target="pes_kgm_cg_tableview_add" urlargs="uid">Add</button>
+          </controls>
+      </list2>
+      <lock title="Lock Date" target="pes_kgm_cg_lockdate" urlid="lockdate" urlsegment="4">
+          <title>Cash Gift Table Details</title>
+          <controls>
+          </controls>
+      </lock>
+	</cgtblvw>
+	<listgroup>
+	  <list mod_id="kg-pms-cg" mod_level="2" title="List" target="pes_kgm_cg_list" urlid="list" urlsegment="4" getval="i_y=2016">
+          <title>Performance Ratings List</title>
+          <controls>
+              <button target="pes_kgm_cg_add">Add</button>
+          </controls>
+      </list>
+      <assoc mod_id="kg-pms-as" mod_level="2" title="Associates" target="pes_kgm_cg_assoc" urlid="assoc" urlsegment="4">
+          <title>Performance Ratings - Associates</title>
+          <controls>
+          </controls>
+      </assoc>
+	</listgroup>
+	<formgroup>
+	    <list mod_id="kg-pms-cg" mod_level="2" title="List" target="pes_kgm_cg_list" urlid="list" urlsegment="4" getval="i_y=2016">
+          <title>Performance Ratings List</title>
+          <controls>
+              
+          </controls>
+      </list>
+	    <form mod_id="kg-pms-cg" mod_level="2" title="Form" target="#" urlid="add" urlsegment="4">
+	        <title>Performance Ratings Form</title>
+	        <controls>
+	            
+	        </controls>
+	    </form>
+	    <assoc mod_id="kg-pms-as" mod_level="2" title="Associates" target="pes_kgm_cg_assoc" urlid="assoc" urlsegment="4">
+          <title>Performance Ratings - Associates</title>
+          <controls>
+          </controls>
+      </assoc>
+	</formgroup>
+	<formgroup3>
+	    <list title="List" target="pes_kgm_cg_list" urlid="list" urlsegment="4" getval="i_y=2016">
+          <title>Performance Ratings List</title>
+          <controls>
+              
+          </controls>
+      </list>
+	    <form title="Form" target="#" urlid="edit" urlsegment="4">
+	        <title>Performance Ratings Form</title>
+	        <controls>
+	            
+	        </controls>
+	    </form>
+	</formgroup3>
+	<formgroup2>
+	    <list title="List" target="pes_kgm_cg_list" urlid="list" urlsegment="4" getval="i_y=2016">
+          <title>Performance Ratings List</title>
+          <controls>
+              
+          </controls>
+      </list>
+	    <form title="Form" target="#" urlid="ul" urlsegment="4">
+	        <title>Performance Ratings Batch Upload Form</title>
+	        <controls>
+	            
+	        </controls>
+	    </form>
+	</formgroup2>
+	<formgroup4>
+	    <list title="Form" target="#" urlid="cg" urlsegment="4">
+          <title>Cash Gift Master List</title>
+          <controls>              
+          </controls>
+      </list>
+	</formgroup4>
+	
+</tabs>

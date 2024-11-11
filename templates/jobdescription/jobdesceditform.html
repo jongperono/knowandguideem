@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% load custom_fields %}
+{% block content %}
+<script type="text/javascript">
+//var value = '<table style="height: 52px;" border="1" width="243"><tbody><tr><td>a</td><td>b</td><td>c</td></tr><tr><td>d</td><td>e</td><td>f</td></tr></tbody></table><p>some html</p>';
+var html = $('#id_value').val();
+tinymce.init({
+    selector: "textarea",
+    theme: "modern",
+    plugins: [
+        "advlist hr pagebreak preview advlist2",
+        "searchreplace wordcount visualblocks visualchars code fullscreen",
+        "nonbreaking save table contextmenu directionality",
+        "template paste textpattern link"
+    ],
+    toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+    image_advtab: true,
+    height : 300,
+    setup: function(e){
+        e.on("init",
+              function(e) {
+                tinyMCE.activeEditor.setContent(html);
+              }
+        );
+    }
+});
+</script>
+
+<form action="{% url 'jobdesc_modify' id %}" method="post">
+{% if display_error %}
+<br />
+	<div class="alert alert-error">
+		{{ form.errors }}
+		{{ form.non_field_errors }}
+		{{ error }}
+	</div>
+{% endif %}
+{% if message %}
+<br />
+	<div class="alert alert-success">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<h4>Success!</h4>
+		The data has been saved...
+	</div>
+{% endif %}
+	{% csrf_token %} 
+	<table class="table2 table2-form">
+		<tbody>
+			<tr>
+				<td style="width:100px;">Code:</td>
+				<td>{{ form.code }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Description:</td>
+				<td>{{ form.description }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Manual:</td>
+				<td>{{ form.manual }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Department/Division:</td>
+				<td>{{ form.dep_div }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Position:</td>
+				<td>{{ form.position }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Version:</td>
+				<td>{{ form.version }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Revision:</td>
+				<td>{{ form.revision }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Effectivity Date:</td>
+				<td>{{ form.effec_date }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Revision Date:</td>
+				<td>{{ form.rev_date }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Approver 1:</td>
+				<td>{% lookupfield form form.appr1 %}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Approver 2:</td>
+				<td>{% lookupfield form form.appr2 %}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Approver 3:</td>
+				<td>{% lookupfield form form.appr3 %}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Approver 4:</td>
+				<td>{% lookupfield form form.appr4 %}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Approver 5:</td>
+				<td>{% lookupfield form form.appr5 %}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Approver 6:</td>
+				<td>{% lookupfield form form.appr6 %}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Remarks:</td>
+				<td>
+					<textarea style="visibility: hidden" id="id_value" name="value">{{ html }}</textarea>
+				</td>
+			</tr>
+			<tr>
+				<td> </td>
+				<td>
+					<button type="submit" class="btn btn-small" name="save" value="save" id="id_savenow">Save</button>
+					<a class="btn btn-small" href="{% url 'jobdesc_list' %}">Cancel</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</form>
+<script>
+	$('#id_savenow').click(function(){
+		$('#id_value').val(tinyMCE.activeEditor.getContent());
+		//alert(tinyMCE.activeEditor.getContent());
+	})
+</script>
+{% endblock content %}

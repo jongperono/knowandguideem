@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load custom_fields %}
+{% block content %}
+<form action="{% if Edit %}{% url 'salarycat_modify' id %}{% else %}{% url 'salarycat_create' %}{% endif %}" method="post">
+{% if display_error %}
+<br />
+	<div class="alert alert-error">
+		{{ error }}
+		{{ form.errors }}
+		{{ form.non_field_errors }}
+	</div>
+{% endif %}
+{% if message %}
+<br />
+	<div class="alert alert-success">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<h4>Success!</h4>
+		The data has been saved...
+	</div>
+{% endif %}
+	{% csrf_token %} 
+	<table class="table2 table2-form">
+		<tbody>
+			<tr>
+				<td style="width:100px;">Code:</td>
+				<td>{{ form.code }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Name:</td>
+				<td>{{ form.description }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Minimum Wage:</td>
+				<td>{{ form.minimum_wage }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Band:</td>
+				<td>{{ form.band }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Status:</td>
+				<td>{{ form.status }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Effectivity Date From:</td>
+				<td>{{ form.datefrom }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Effectivity Date To:</td>
+				<td>{{ form.dateto }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Revision Date:</td>
+				<td>{{ form.revision_date }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Area:</td>
+				<td>{{ form.area }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Sub-Area:</td>
+				<td>{{ form.subarea }}</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button type="submit" class="btn btn-small" name="save" value="save">Save</button>
+					{% if Edit %}
+					
+					{% else %}
+						<button type="submit" class="btn btn-small" name="save" value="savenew">Save and New</button>
+					{% endif %}
+					<a class="btn btn-small" href="{% url 'salarycat_list' %}">Cancel</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</form>
+<script>
+	$('#id_status').change(function(){
+		status = $(this).val();
+		if (status == 2)
+		{
+			$('#id_archived_date').attr('required','required');
+		}
+		else
+		{
+			$('#id_archived_date').removeAttr('required');
+		}
+	});
+</script>
+{% endblock content %}

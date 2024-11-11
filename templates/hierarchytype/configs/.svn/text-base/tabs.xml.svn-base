@@ -1,0 +1,25 @@
+<tabs>
+	<listgroup>
+	    <list mod_id="kg-cs-ch-ls" mod_level="1" title="List" id="list" target="hierarchytypelist" urlid="index" urlsegment="4">
+	        <title>Company Hierarchy Level - List</title>
+	        <controls>
+	            <button mod_id="kg-cs-ch-ls" mod_level="2" target="hierarchytypecreate">Add</button>
+	        </controls>
+	    </list>
+	</listgroup>
+	<formgroup>
+		<listform mod_id="kg-cs-ch-ls" mod_level="1" title="List" id="list" target="hierarchytypelist" urlid="index" urlsegment="4">
+	        <title>Company Hierarchy Level - List</title>
+	        <controls>
+	        </controls>
+	    </listform>
+	    <form mod_id="kg-cs-ch-ls" mod_level="2" title="Form" id="list" target="hierarchytypelist" urlid="form" urlsegment="4">
+	        <title>Company Hierarchy Level Form</title>
+	        <controls>
+	        </controls>
+	    </form>
+	</formgroup>
+</tabs>
+
+
+

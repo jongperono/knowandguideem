@@ -1,0 +1,23 @@
+<grid>
+	<subgrid numcol="3">
+		<col role="counter">
+			<lable>#</lable>
+		</col>
+		<col role="field" filter="true" sort="true" >
+			<label>Location Type</label>
+			<type>text</type>
+			<parname>description</parname>
+			<modelfield>description</modelfield>
+		</col>
+		<col role="controls" filter="true" modelproperty="true" filter-submit="true" mod_id="pi-cs-lc-ls">
+	        <type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		        <modelfield mod_level="2">ctrlbtn_w</modelfield>
+		        <modelfield mod_level="1">ctrlbtn_r</modelfield>
+	        </actions>
+    	</col>
+	</subgrid>	
+</grid>

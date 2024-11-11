@@ -1,0 +1,37 @@
+<menu>
+    <link mod_id="kg-jd" target="jobdesc_list" submenu="false" role="menu" title="Job Description" urlid="jobdesc" urlsegment="3"></link>
+    <link mod_id="kg-cm" target="#" submenu="true" role="menu" title="Compensation" id="3">
+        <sublink mod_id="kg-cm-ss" target="salarycat_list" role="menu" urlid="salarycat" urlsegment="3">Salary Structures</sublink>
+        <sublink mod_id="kg-cm-al" target="compen_list" role="menu" urlid="compen" urlsegment="3">Allowances</sublink>
+    </link>
+    <link mod_id="kg-pms" target="#" submenu="true" role="menu" title="PMS" id="4">
+        <sublink mod_id="kg-pms-cg" target="pes_kgm_cg_list" role="menu" urlid="pmsrating" urlsegment="3" getval="i_y=2016">Performance Ratings</sublink>
+        <sublink mod_id="kg-pms-cgt" target="pes_kgm_cg_table" role="menu" urlid="pmscgtbl" urlsegment="3">Cash Gift Table</sublink>
+        <sublink mod_id="kg-pms-cgt" target="pes_kgm_cg_cmpy_dtl" role="menu" urlid="newcgtbl" urlsegment="3">New Cash Gift Table</sublink>
+        <sublink mod_id="kg-pms-cgt" target="pes_kgm_cg_list_paf" role="menu" urlid="paf" urlsegment="3">Performance Appraisal</sublink>
+        <sublink mod_id="#"  target="#" role="blank" urlid="#" urlsegment="3"></sublink>
+    </link>
+    <link mod_id="kg-po" target="#" submenu="true" role="menu" title="Positions" id="1">
+    	<sublink mod_id="kg-po-ti" target="to_list" role="menu" urlid="to" urlsegment="3">Title</sublink>
+        <sublink mod_id="kg-po-cl" target="positionclassificationlist" role="menu" urlid="positionclassification" urlsegment="3">Classifications</sublink>
+        <sublink mod_id="kg-po-bl" target="steppositionlevellist" role="menu" urlid="steppositionlevel" urlsegment="3">Band/Level Configurations</sublink>
+        <sublink mod_id="kg-po-ba" target="positionlevellist" role="menu" urlid="positionlevel" urlsegment="3">Band</sublink>
+        <sublink mod_id="kg-po-lv" target="step_list" role="menu" urlid="step" urlsegment="3">Level</sublink>
+    </link>
+    <link mod_id="kg-rb" target="rpb_list" submenu="false" role="menu" title="RPB" urlid="rpb" urlsegment="3">RPB</link>
+    <link mod_id="kg-cs" target="#" submenu="true" role="menu" title="Company Settings" id="2">
+        <sublink mod_id="kg-cs-cs" target="peskgmhierarchylist" role="menu" urlid="peskgmhierarchy" urlsegment="3">Company Structure</sublink>
+        <sublink mod_id="kg-cs-ch" target="hierarchytypelist" role="menu" urlid="hierarchytype" urlsegment="3">Company Hierarchy Level</sublink>
+    </link>
+    <link mod_id="kg-st" target="#" submenu="true" role="menu" title="Settings" id="5">
+        <sublink mod_id="kg-st-mf" target="selectem_skillset_list" role="menu" urlid="skillset" urlsegment="3">Expertise Category</sublink>
+        <sublink mod_id="cb-es"  target="#" role="blank" urlid="#" urlsegment="3"></sublink>
+    </link>
+    <!--
+    <link mod_id="kg-ot" target="#" submenu="true" role="menu" title="Other" id="5">
+        <sublink mod_id="kg-ot-ra" target="viewrpb_list" role="menu" urlid="viewrpb" urlsegment="3">RPB Access</sublink>
+        <sublink mod_id="kg-ot-ra"  target="#" role="blank" urlid="#" urlsegment="3"></sublink>
+    </link>
+    -->
+    <link mod_id="kg-ud" target="kgm_documentation_list" submenu="false" role="menu" title="Documentation" urlid="documentation" urlsegment="3">Documentation</link>
+</menu>

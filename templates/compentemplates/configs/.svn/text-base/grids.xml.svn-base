@@ -1,0 +1,116 @@
+<grid>
+    <grid numcol="7">
+        <col role="counter">
+            <label>#</label>
+        </col>
+        <col role="field" filter="true" sort="true" foreignkey="true" foriegnkeylabel="description">
+            <type>text</type>
+            <parname>account</parname>
+            <label>Payroll Account</label>
+            <modelfield>account_ledger</modelfield>
+        </col>
+        <col role="field" filter="true" sort="true" modelproperty="true">
+            <type>text</type>
+            <parname>type</parname>
+            <label>type</label>
+            <modelfield>typename</modelfield>
+        </col>
+        <col role="field" filter="true" sort="true" modelproperty="true">
+            <type>text</type>
+            <parname>sched</parname>
+            <label>Payment Schedule</label>
+            <modelfield>schedname</modelfield>
+        </col>
+        <col role="field" filter="true" sort="true" humanize="true">
+            <type>number</type>
+            <parname>amount</parname>
+            <class>gridfiltersize-small</class>
+            <label>Amount</label>
+            <modelfield>amount</modelfield>
+        </col>
+        <col role="field" filter="true" sort="true" modelproperty="true">
+            <type>text</type>
+            <parname>sal_type</parname>
+            <label>Salary Type</label>
+            <modelfield>salary_name</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+        <col role="field" filter="true" sort="true" modelproperty="true">
+            <type>text</type>
+            <parname>tender</parname>
+            <class>gridfiltersize-small</class>
+            <label>Tender Type</label>
+            <modelfield>tender</modelfield>
+        </col>
+        <col role="controls" filter="true" modelproperty="true" filter-submit="true" mod_id="kg-cm-al-ls">
+	        <type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		        <modelfield mod_level="2">ctrlbtn_d</modelfield>
+		        <modelfield mod_level="1">ctrlbtn_d</modelfield>
+	        </actions>
+    	</col>
+    </grid>
+    <grid2 numcol="5">
+        <col role="counter">
+            <label>#</label>
+        </col>
+        <col role="field" filter="true" sort="true" foreignkey="true" foriegnkeylabel="description">
+            <type>text</type>
+            <parname>salcat</parname>
+            <label>Salary Category</label>
+            <modelfield>salarycat</modelfield>
+        </col>
+        <col role="field" filter="true" foreignkey="true" foriegnkeylabel="position_level__description">
+            <type>text</type>
+            <parname>b_l</parname>
+            <label>Band/Level</label>
+            <modelfield>step_position_level</modelfield>
+        </col>
+        <col role="field" filter="true" humanize="true">
+            <type>text</type>
+            <parname>a</parname>
+            <label>Amount</label>
+            <modelfield>amount</modelfield>
+        </col>
+        <col role="controls" filter="true" modelproperty="true" filter-submit="true" mod_id="kg-cm-al-ls">
+	        <type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		        <modelfield mod_level="2">ctrlbtn_w</modelfield>
+		        <modelfield mod_level="1">ctrlbtn_r</modelfield>
+	        </actions>
+    	</col>
+    </grid2>
+    <grid3 numcol="4">
+        <col role="counter">
+            <label>#</label>
+        </col>
+        <col role="field" filter="true" modelproperty="true" modelproperty-field="position">
+            <type>text</type>
+            <parname>salcat</parname>
+            <label>Position Function</label>
+            <modelfield>positionname</modelfield>
+        </col>
+        <col role="field" filter="false" humanize="true">
+            <type>text</type>
+            <parname>a</parname>
+            <label>Amount</label>
+            <modelfield>amount</modelfield>
+        </col>
+        <col role="controls" filter="true" modelproperty="true" filter-submit="true" mod_id="kg-cm-al-ls">
+	        <type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		        <modelfield mod_level="2">ctrlbtn_w</modelfield>
+		        <modelfield mod_level="1">ctrlbtn_r</modelfield>
+	        </actions>
+    	</col>
+    </grid3>
+</grid>

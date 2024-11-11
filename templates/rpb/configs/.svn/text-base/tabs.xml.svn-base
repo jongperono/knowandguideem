@@ -1,0 +1,101 @@
+<tabs>
+    <createrpb>
+    	<list mod_id="kg-rb-ls" mod_level="1" title="List" urlid="" target="rpb_list" urlsegment="3">
+	        <title>Required Present Balance</title>
+	        <controls>
+	        </controls>
+	    </list>
+	    <create mod_id="kg-rb-ls" mod_level="2" title="FORM" urlid="rpb" target="#" urlsegment="3">
+	        <title>Required Present Balance</title>
+	        <controls>      
+	        </controls>
+	    </create>
+	    <list2 mod_id="kg-rb-ls" mod_level="1" title="Dummy" urlid="dummy" target="rpb_list_dummy" urlsegment="4">
+	        <title>Required Present Balance</title>
+	        <controls>
+	            <button mod_id="kg-rb-ls" mod_level="2" target="rpb_create">Add</button>
+	        </controls>
+	    </list2>
+	    <archive mod_id="kg-rb-ac" mod_level="1" title="Archive" urlid="" target="rpb_archive" urlsegment="3">
+	        <title>Required Present Balance</title>
+	    </archive>
+	</createrpb>
+	<listrpb>
+	    <list mod_id="kg-rb-ls" mod_level="1" title="List" urlid="index" target="rpb_list" urlsegment="4">
+	        <title>Required Present Balance</title>
+	        <controls>
+	            <button mod_id="kg-rb-ls" mod_level="2" target="rpb_create">Add</button>
+	        </controls>
+	    </list>
+	    <list2 mod_id="kg-rb-ls" mod_level="1" title="Dummy" urlid="dummy" target="rpb_list_dummy" urlsegment="4">
+	        <title>Required Present Balance</title>
+	        <controls>
+	            <button mod_id="kg-rb-ls" mod_level="2" target="rpb_create">Add</button>
+	        </controls>
+	    </list2>
+	    <archive mod_id="kg-rb-ac" mod_level="1" title="Archive" urlid="" target="rpb_archive" urlsegment="3">
+	        <title>Required Present Balance</title>
+	    </archive>
+	</listrpb>
+	<rpbinfo>
+    	<list0 mod_id="kg-rb-ls" mod_level="1" title="List" urlid="" target="rpb_list" urlsegment="3" urlargs="#">
+	        <title>Required Present Balance</title>
+	        <controls>
+	        </controls>
+	    </list0>
+	    <create mod_id="kg-rb-ls" mod_level="1" title="Detail" urlid="rpb" target="#" urlsegment="3">
+	        <title>RPB Uploaded File(s)</title>
+	       	<controls>
+	            <button mod_id="kg-rb-ls" mod_level="2" target="rpb_info_upload" urlargs="urlarg1">Upload</button>
+	        </controls>
+	    </create>
+	    <archive mod_id="kg-rb-ac" mod_level="1" title="Archive" urlid="" target="rpb_archive" urlsegment="3">
+	        <title>Required Present Balance</title>
+	    </archive>
+	</rpbinfo>
+    <rpbupload>
+    	<list0 mod_id="kg-rb-ls" mod_level="1" title="List" urlid="" target="rpb_list" urlsegment="3" urlargs="#">
+	        <title>Required Present Balance</title>
+	        <controls>
+	        </controls>
+	    </list0>
+	    <create0 mod_id="kg-rb-ls" mod_level="1" title="Detail" urlid="" target="rpb_info" urlsegment="3" urlargs="urlarg1">
+	        <title>RPB Uploaded File(s)</title>
+	       	<controls>
+	        </controls>
+	    </create0>
+	    <create mod_id="kg-rb-ls" mod_level="2" title="Upload" urlid="rpb" target="#" urlsegment="3">
+	        <title>Upload RPB File</title>
+	        <controls>
+	        </controls>
+	    </create>
+	    <archive mod_id="kg-rb-ac" mod_level="1" title="Archive" urlid="" target="rpb_archive" urlsegment="3">
+	        <title>Required Present Balance</title>
+	    </archive>
+	</rpbupload>
+	<rpbarchive>
+		<list mod_id="kg-rb-ls" mod_level="1" title="List" urlid="" target="rpb_list" urlsegment="3">
+	        <title>Required Present Balance</title>
+	        <controls>
+	        </controls>
+	    </list>
+	    <list2 mod_id="kg-rb-ls" mod_level="1" title="Dummy" urlid="dummy" target="rpb_list_dummy" urlsegment="4">
+	        <title>Required Present Balance</title>
+	        <controls>
+	            <button mod_id="kg-rb-ls" mod_level="2" target="rpb_create">Add</button>
+	        </controls>
+	    </list2>
+	    <list1 mod_id="kg-rb-ac" mod_level="1" title="Archive" urlid="rpb" target="#" urlsegment="3">
+	        <title>RPB Archive Files</title>
+	        <controls>
+	        </controls>
+	    </list1>
+	</rpbarchive>
+	<report>
+	    <list mod_id="kg-rp-rs" mod_level="1" title="Form" urlid="rpb" target="kgm_rpb_report2" urlsegment="4">
+	        <title>Required Present Balance Report</title>
+	        <controls>
+	        </controls>
+	    </list>
+	</report>
+</tabs>

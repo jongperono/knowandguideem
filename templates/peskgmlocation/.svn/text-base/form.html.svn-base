@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load custom_fields %}
+{% block content %}
+
+<form action="{% if edit %} {% url 'peskgmlocationedit' id  %} {% endif %}" method="post">	
+	{% csrf_token %}
+	
+		{{error}}
+	{{message}}
+	{{ form.errors }}
+	{{ form.non_field_errors }}
+	
+	{{ locationform.errors }}
+	{{ locationform.non_field_errors }}
+
+        <table class="table2 table2-form">
+           <tbody>
+	             <tr>
+	               <td style="width:80px;">Branch Code: </td>
+	               <td>{{form.branch_code}}</td>
+	             </tr>
+             
+             
+	             <tr>
+	               <td style="width:80px;">Branch Name : </td>
+	               <td>{{locationform.description}}</td>
+	             </tr>
+	             <tr>
+	               <td style="width:80px;">GP Code: </td>
+	               <td>{{form.gp_code}}</td>
+	             </tr>
+	             <tr>
+	               <td style="width:80px;">LLLLL: </td>
+	               <td>{{form.LLL}}</td>
+	             </tr>
+	              <tr>
+	               <td style="width:80px;">Area : </td>
+	               <td>{{ form.region }}</td>
+	             </tr>
+	               <tr>
+	               <td style="width:80px;">Sub-Area : </td>
+	               <td>{{ form.sub_area }}</td>
+	             </tr>
+	             
+	             
+	              <tr>
+	               <td style="width:80px;">Location Type : </td>
+	               <td>{{locationform.location_type}}</td>
+	             </tr>
+	             
+	              <tr>
+	               <td style="width:80px;">Company : </td>
+	               <td>{% lookupfield locationform locationform.party %}</td>
+	             </tr>
+	          	<tr>
+	               <td style="width:80px;">Address: </td>
+	               <td>{{ form.address }}</td>
+	             </tr>
+
+              <tr>
+              	
+              	<td>
+              	</td>
+              	
+              	<td>
+                 <div class="btn-controls-footer">
+                 	
+             <div class="btn-controls">
+             	
+             	
+             	<button type="submit" class="btn btn-small"  name="save" value="save">Save </button>
+             	<button type="submit" class="btn btn-small"  name="save" value="savenew">Save &amp; New </button>
+             	<a href="{% url 'peskgmlocationlist' %}"><button class="btn btn-small" type="button"> Cancel </button></a>
+             	
+                   
+                
+             </div>
+           
+           </div>
+           </tr>
+           </table>
+
+
+	
+	
+</form>
+
+
+
+
+
+{% endblock content %}

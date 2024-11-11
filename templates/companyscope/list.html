@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+{{error}}
+        <table class="table2 table2-grid">
+           <thead>
+             <tr>
+               <th>#</th>
+               <th>Hierarchy</th>
+               <th>Employee</th>
+               <th>TO</th>
+               <th>Location</th>
+                <th>Edit</th>
+               <th>Delete</th>
+              
+             </tr>
+           </thead>
+           <tbody>
+           	
+           	{% for x in list %}
+	             <tr>
+	               	<td>{{ forloop.counter }}</td>
+	              	<td>{{ x.hierarchy.description }}</td>
+	                <td>{{ x.employee}}</td>
+	                <td>{{ x.to }}</td>
+	                <td>{{ x.pes_location.location.description }}</td>
+	                 <td><a href="{% url 'pescompanyscopeedit' x.id  %}">Edit</a></td>
+	               <td><a href="{% url 'pescompanyscopedelete' x.id  %}">Delete</a></td>
+	              
+	             </tr>
+	    
+			{% endfor %}
+           </tbody>
+           <tfoot>
+             <tr>
+               <td colspan="5">
+                <div class="pagination pull-right">
+                  Show Rows:
+	                  <select>
+	                    <option>10</option>
+	                    <option>50</option>
+	                    <option>100</option>
+	                  </select>
+                  &nbsp;&nbsp;&nbsp;
+                  Go to:
+                  <input type="text" />
+                  &nbsp;&nbsp;&nbsp;
+                  1 - 10 of 100 &nbsp;
+                  <div class="btn-group">
+				    <button class="btn"><i class="icon-arrow-left"></i></button>
+				    <button class="btn"><i class="icon-arrow-right"></i></button>
+				  </div>
+                </div>
+               </td>
+             </tr>
+           </tfoot>
+         </table>
+{% endblock content %}

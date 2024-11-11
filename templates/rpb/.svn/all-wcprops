@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/intent/!svn/ver/12783/trunk/source/pes/knowandguideem/templates/rpb
+END
+toinfo.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/intent/!svn/ver/10887/trunk/source/pes/knowandguideem/templates/rpb/toinfo.html
+END
+rpbinfo.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/intent/!svn/ver/5874/trunk/source/pes/knowandguideem/templates/rpb/rpbinfo.html
+END
+rpblist.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/intent/!svn/ver/10887/trunk/source/pes/knowandguideem/templates/rpb/rpblist.html
+END
+rpbreport.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/intent/!svn/ver/12483/trunk/source/pes/knowandguideem/templates/rpb/rpbreport.html
+END
+rpbarchive.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/intent/!svn/ver/5874/trunk/source/pes/knowandguideem/templates/rpb/rpbarchive.html
+END
+rpbform.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/intent/!svn/ver/11542/trunk/source/pes/knowandguideem/templates/rpb/rpbform.html
+END
+rpbupload.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/intent/!svn/ver/3265/trunk/source/pes/knowandguideem/templates/rpb/rpbupload.html
+END

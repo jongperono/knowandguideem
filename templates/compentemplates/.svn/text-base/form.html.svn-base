@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <form action="{% url 'compen_add'  %}" method="post">	
+    {% csrf_token %}
+  	
+  	{% if message %}
+  		<div class="alert alert-info fade in">
+  			{{message}}
+  		</div>
+   	{% endif %}
+  	
+  	{% if display_error %}
+  		<div class="alert alert-error fade in">
+		{{ forms.mortuary_dts.errors }}
+		{{ forms.mortuary_dts.non_field_errors }}
+		{{ error }}
+  		</div>
+  	{% endif %}
+    <table class="table2 table2-form">
+      <tbody>
+        
+        <tr>
+          <th>Payroll Account</th>
+          <th>Type</th>
+          <th>Payment Schedule</th>
+          <th>Amount</th>
+          <th>Salary Type</th>
+          <th>Tender Type</th>
+          <th>&nbsp;</th>
+        </tr>
+        
+        {{ forms.mortuary_dts.management_form }}
+          {% for dtl in forms.mortuary_dts %}
+          {{ dtl.id }} 
+         
+          <tr class="mortuarydts" id="mortuarydts-{{forloop.counter}}">
+            <td>{{dtl.account_ledger}}</td>
+            <td>{{dtl.type}}</td>
+            <td>{{dtl.payment_sched}}</td>
+            <td>{{dtl.amount}}</td>
+            <td>{{dtl.salary_rate}}</td>
+            <td>{{dtl.tendertype}}</td>
+            <td>
+                {% if dtl.instance.id %}
+                <a class="btn btn-mini btn-danger removecloneMore"><i class="icon-minus"></i></a>
+                <span class="hidden IntEnt-delete">{{ dtl.DELETE  }}</span>    
+              {% else %}
+                <a class="btn btn-mini btn-primary cloneform"><i class="icon-plus"></i></a>
+              {% endif %}
+            </td>      
+          </tr>
+        {% endfor %}
+      
+    		<tr>
+          <td colspan="6">
+            <div class="btn-controls-footer">
+              <div class="btn-controls">
+                <button type="submit" class="btn btn-small"  name="save" value="save">Save </button>
+                <a href="{% url 'compen_list' %}"><button class="btn btn-small" type="button"> Cancel </button></a>
+              </div>
+            </div>
+          </td>
+        </tr>
+    </table>
+  </form>
+{% endblock content %}

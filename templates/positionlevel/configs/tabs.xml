@@ -1,0 +1,27 @@
+<tabs>
+    <creategroup>
+	    <create title="Create" id="create" target="steppositionlevellist">
+	        <title>Set Configuration</title>
+	    </create>
+	</creategroup>
+	<listgroup>
+	    <list mod_id="kg-po-ba-ls" mod_level="1" title="List" id="list" target="steppositionlevellist" urlid="index" urlsegment="4">
+	        <title>Band List</title>
+	        <controls>
+	            <button mod_id="kg-po-ba-ls" mod_level="2" target="createposition">Add</button>
+	        </controls>
+	    </list>
+	</listgroup>
+	<formgroup>
+	  	<list2 mod_id="kg-po-ba-ls" mod_level="1" title="List" id="list" target="positionlevellist" urlid="index" urlsegment="4">
+	        <title>Band </title>
+	        <controls>
+	        </controls>
+	    </list2>
+	    <tab2 mod_id="kg-po-ba-ls" mod_level="2" title="Form" target="#" urlid="positionlevel" urlsegment="3">
+            <title>Band Form</title>
+            <controls>
+            </controls>
+        </tab2>
+	</formgroup>
+</tabs>

@@ -1,0 +1,24 @@
+<tabs>
+    <creategroup>
+	    <create title="Create" id="create" target="pescompanyscopelist">
+	        <title>test</title>
+	    </create>
+	</creategroup>
+	<listgroup>
+	    <list title="List" id="list" target="pescompanyscopelist">
+	        <title>Company Structure</title>
+	        <controls>
+	            <button target="pescompanyscopecreate">Add</button>
+	            
+	        </controls>
+	    </list>
+	    <tab2 title="tab2" target="#">
+            <title>Form</title>
+            <controls>
+                <button target="peskgmlocationcreate">Add</button>
+                <button target="peskgmlocationcreate">Edit</button>
+                <button target="peskgmlocationcreate">Delete</button>
+            </controls>
+        </tab2>
+	</listgroup>
+</tabs>

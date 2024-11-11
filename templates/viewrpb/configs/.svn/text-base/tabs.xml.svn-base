@@ -1,0 +1,23 @@
+<tabs>
+    <creategroup>
+    	<list mod_id="kg-ot-ra-ls" mod_level="1" title="List" urlid="" target="viewrpb_list" urlsegment="3">
+	        <title>Step</title>
+	        <controls>
+	            
+	        </controls>
+	    </list>
+	    <create mod_id="kg-ot-ra-ls" mod_level="2" title="FORM" urlid="viewrpb" target="#" urlsegment="3">
+	        <title>View RPB Form</title>
+	      	<controls>
+	        </controls>
+	    </create>
+	</creategroup>
+	<listgroup>
+	    <list mod_id="kg-ot-ra-ls" mod_level="1" title="List" urlid="viewrpb" target="#" urlsegment="3">
+	        <title>View RPB - List</title>
+	        <controls>
+	            <button mod_id="kg-ot-ra-ls" mod_level="2" target="viewrpb_create">Add</button>
+	        </controls>
+	    </list>
+	</listgroup>
+</tabs>

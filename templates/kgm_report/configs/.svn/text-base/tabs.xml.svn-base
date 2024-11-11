@@ -1,0 +1,9 @@
+<tabs>
+	<report>
+	    <list mod_id="kg-rp-up" mod_level="1" title="Update" urlid="generic" target="kgm_report_generic" urlsegment="4">
+	        <title>Update Code/Description Report</title>
+	        <controls>
+	        </controls>
+	    </list>
+	</report>
+</tabs>

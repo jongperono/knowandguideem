@@ -1,0 +1,29 @@
+<tabs>
+	<listgroup>
+	    <list mod_id="kg-po-cl-ls" mod_level="1" title="List" id="list" target="positionclassificationlist" urlid="index" urlsegment="4">
+	        <title>Position Classification </title>
+	        <controls>
+	            <button mod_id="kg-po-cl-ls" mod_level="2" target="positionclassificationcreate">Add</button>
+	        </controls>
+	    </list>
+	</listgroup>
+	<formgroup>
+		<listform mod_id="kg-po-cl-ls" mod_level="1" title="List" id="list" target="positionclassificationlist" urlid="index" urlsegment="4">
+	        <title>Position Classification  </title>
+	        <controls>
+	        </controls>
+	    </listform>
+	    <form mod_id="kg-po-cl-ls" mod_level="2" title="Form" id="list" target="positionclassificationlist" urlid="form" urlsegment="4">
+	        <title>Position Classification  </title>
+	        <controls>
+	        </controls>
+	    </form>
+	</formgroup>
+	<reportgroup>
+	    <list mod_id="kg-rp-pc" mod_level="1" title="Form" target="positionclassificationreport" urlid="positionclassification" urlsegment="4">
+	        <title>Position Classification Report</title>
+	        <controls>
+	        </controls>
+	    </list>
+	</reportgroup>
+</tabs>

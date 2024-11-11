@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load pes_access %}
+{% block content %}
+{% if display_error %}
+<br />
+	<div class="alert alert-error">
+		{{ error }}
+	</div>
+{% endif %}
+<table class="table2 table2-grid">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Filename</th>
+			<th>Date Uploaded</th>
+			<th>Size(bytes)</th>
+			<th class="align-right">Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for x in list %}
+			<tr>
+				<td>{{ forloop.counter}}</td>
+				<td>{{ x.file }}</td>
+				<td>{{ x.date_uploaded }}</td>
+				<td>{{ x.file_size|filesizeformat }}</td>
+				<td class="align-right">
+					{% if request|is_mod_allowed2:"kg-jd-ls,2,0" %}
+						<a href="#" title="Restore" class="confirm_page_link" modal-title="Confirm Restore:" modal-body="Are you sure you want to restore this file?" modal-link="{% url 'jobdesc_restore_upload' x.id %}">
+							<i class="icon-reply-all icon-large"></i>
+						</a>
+						<a href="#" title="Delete" class="confirm_page_link" modal-title="Confirm Delete:" modal-body="Are you sure you want to delete this file?" modal-link="{% url 'jobdesc_archive_delete' x.id %}">
+							<i class="icon-trash icon-large"></i>
+						</a>
+					{% endif %}
+				</td>
+			</tr>
+		{% endfor %}
+			<tr>
+				
+			</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="6">
+				<div class="pagination pull-right">
+					Show Rows:
+					<select>
+						<option>10</option>
+						<option>50</option>
+                    	<option>100</option>
+                  	</select>
+                  	&nbsp;&nbsp;&nbsp;
+                  	Go to:
+                  	<input type="text" />
+                  	&nbsp;&nbsp;&nbsp;
+                  	1 - 10 of 100 &nbsp;
+                  	<div class="btn-group">
+				    	<button class="btn"><i class="icon-arrow-left"></i></button>
+				    	<button class="btn"><i class="icon-arrow-right"></i></button>
+				  	</div>
+                </div>
+        	</td>
+		</tr>
+    </tfoot>
+</table>
+{% endblock content %}

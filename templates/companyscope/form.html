@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<form action="{% if edit %} {% url 'pescompanyscopeedit' id  %}{% else %}{% url 'pescompanyscopecreate'  %} {% endif %}" method="post">	
+	{% csrf_token %}
+	
+		{{error}}
+	
+	{{ form.errors }}
+	{{ form.non_field_errors }}
+
+<table class="table2 table2-form">
+           <tbody>
+	             <tr>
+	               <td style="width:80px;">Hierarchy: </td>
+	               <td>{{form.hierarchy}}</td>
+	             </tr>
+             
+             
+	             <tr>
+	               <td style="width:80px;">Employee: </td>
+	               <td>{{form.employee}}</td>
+	             </tr>
+	             
+	              <tr>
+	               <td style="width:80px;">To: </td>
+	               <td>{{form.to}}</td>
+	             </tr>
+	             
+	              <tr>
+	               <td style="width:80px;">Location: </td>
+	               <td>{{form.pes_location}}</td>
+	             </tr>
+	          
+
+              <tr>
+              	
+              	<td>
+              	</td>
+              	
+              	<td>
+                 <div class="btn-controls-footer">
+                 	
+             <div class="btn-controls">
+             	
+             	<button type="submit" class="btn btn-small"  name="save" value="save">Save </button>
+             	<button type="submit" class="btn btn-small"  name="save" value="savenew">Save &amp; New </button>
+             	
+                   <button class="btn btn-small" type="button"> Cancel </button>
+                
+             </div>
+           
+           </div>
+           </tr>
+           </table>	
+	
+	
+	
+	
+</form>
+
+{% endblock content %}

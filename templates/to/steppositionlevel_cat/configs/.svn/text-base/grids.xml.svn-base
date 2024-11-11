@@ -1,0 +1,64 @@
+<grid>
+    <grid numcol="8">
+        <col role="counter">
+            <label>#</label>
+        </col>
+        <col role="field" foreignkey="true" foriegnkeylabel="position_level__description" filter="true">
+            <type>text</type>
+            <parname>spl</parname>
+            <label>levels/steps</label>
+            <modelfield>step_position_level</modelfield>
+        </col>
+        <col role="field" filter="true" sort="true" humanize="true">
+            <type>number</type>
+            <parname>basic</parname>
+            <label>basic</label>
+            <class>align-right</class>
+            <modelfield>basic</modelfield>
+        </col>
+        <col role="field" filter="true" sort="true" humanize="true">
+            <type>number</type>
+            <parname>cola</parname>
+            <label>cola</label>
+            <class>align-right</class>
+            <modelfield>cola</modelfield>
+        </col>
+        <col role="field" filter="true" sort="true" humanize="true">
+            <type>number</type>
+            <parname>h_allow</parname>
+            <class>align-right</class>
+            <label>hiring allowance</label>
+            <modelfield>hiring_allowance</modelfield>
+        </col>
+        <col role="field" filter="true" sort="true" humanize="true">
+            <type>number</type>
+            <parname>allow</parname>
+            <label>allowance</label>
+            <class>align-right</class>
+            <modelfield>allowance</modelfield>
+        </col>
+        <col role="field" modelproperty="true" humanize="true">
+        	<type>text</type>
+            <parname>total</parname>
+            <class>align-right</class>
+            <label>total</label>
+            <modelfield>total</modelfield>
+        </col>
+        <col role="button" width="100" filter="true" filter-submit="true">
+            <label>action</label>
+            <class>align-right icons-row</class>
+            <button withconfirm="false">
+                <label>Edit</label>
+                <target>splcat_modify</target>
+                <iconclass>icon-edit icon-large</iconclass>
+            </button>
+            <button withconfirm="true">
+                <label>Delete</label>
+                <target>splcat_delete</target>
+                <modalheader>Confirm Delete:</modalheader>
+                <iconclass>icon-trash icon-large</iconclass>
+                <modalbody>Are you sure to delete this entry?</modalbody>
+            </button>
+        </col>
+    </grid>
+</grid>

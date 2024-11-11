@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="{% url 'kgm_rpb_report2' %}" method="post">
+{% if display_error %}
+<br />
+	<div class="alert alert-error">
+		{{ form.errors }}
+		{{ form.non_field_errors }}
+		{{ error }}
+	</div>
+{% endif %}
+	{% csrf_token %} 
+	<table class="table2 table2-form">
+		<tbody>
+			<tr>
+				<td style="width:100px;">Company:</td>
+				<td>{{ form.company }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Area:</td>
+				<td>{{ form.area }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Division:</td>
+				<td>{{ form.division }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Department:</td>
+				<td>{{ form.department }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Branch:</td>
+				<td>{{ form.branch }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Auto-Replenish:</td>
+				<td>{{ form.autoreplenish }}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Employment Status:</td>
+				<td>{{ form.employment_status }}</td>
+			</tr>
+			<tr>
+				<td> </td>
+				<td>
+					<button type="submit" class="btn btn-small"  name="save" value="save">Okay</button>
+					<a class="btn btn-small" href="{% url 'kgm_rpb_report2' %}">Cancel</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</form>
+{% endblock content %}

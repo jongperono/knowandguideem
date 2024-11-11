@@ -1,0 +1,87 @@
+<tabs>
+    <create>
+    	<list mod_id="kg-cm-al-ls" mod_level="1" title="List" urlid="" target="compen_list" urlsegment="3" urlargs="#">
+	        <title>Compensation Maintenance - List</title>
+	        <controls>
+	            
+	        </controls>
+	    </list>
+	    <create mod_id="kg-cm-al-ls" mod_level="2" title="FORM" urlid="compen" target="#" urlsegment="3" urlargs="#">
+	        <title>Compensation Maintenance Form</title>
+	      	<controls>
+	            <button mod_id="kg-cm-al-ls" mod_level="1" target="compen_list">Back</button>
+	        </controls>
+	    </create>
+	</create>
+	<list>
+		<list mod_id="kg-cm-al-ls" mod_level="1" title="List" urlid="compen" target="compen_list" urlsegment="3" urlargs="#">
+	        <title>Compensation Maintenance - List</title>
+	        <controls>
+	            <button mod_id="kg-cm-al-ls" mod_level="2" target="compen_add">Edit</button>
+	        </controls>
+	    </list>
+	</list>
+	<detail>
+    	<list mod_id="kg-cm-al-ls" mod_level="1" title="List" urlid="" target="compen_list" urlsegment="3" urlargs="#">
+	        <title>Compensation Maintenance - List</title>
+	        <controls>
+	            
+	        </controls>
+	    </list>
+	    <create mod_id="kg-cm-al-ls" mod_level="1" title="DETAIL" urlid="compen" target="#" urlsegment="3" urlargs="#">
+	        <title>Compensation Maintenance Detail - List</title>
+	      	<controls>
+	            <button mod_id="kg-cm-al-ls" mod_level="2" urlargs="urlarg1" target="compen_dtl_create">Add</button>
+	        </controls>
+	    </create>
+	</detail>
+	<detailcreate>
+    	<list mod_id="kg-cm-al-ls" mod_level="1" title="List" urlid="" target="compen_list" urlsegment="3" urlargs="#">
+	        <title>Compensation Maintenance - List</title>
+	        <controls>
+	            
+	        </controls>
+	    </list>
+	    <detail mod_id="kg-cm-al-ls" mod_level="1" title="DETAIL" urlid="" target="compen_dtl" urlsegment="3" urlargs="urlarg1">
+	        <title>Compensation Maintenance Detail</title>
+	      	<controls>
+	        </controls>
+	    </detail>
+	    <create mod_id="kg-cm-al-ls" mod_level="1" title="FORM" urlid="compen" target="#" urlsegment="3" urlargs="#">
+	        <title>Compensation Maintenance Detail Form</title>
+	      	<controls>
+	        </controls>
+	    </create>
+	</detailcreate>
+	<padetail>
+    	<list mod_id="kg-cm-al-ls" mod_level="1" title="List" urlid="" target="compen_list" urlsegment="3" urlargs="#">
+	        <title>Compensation Maintenance - Position - List</title>
+	        <controls>
+	        </controls>
+	    </list>
+	    <create mod_id="kg-cm-al-ls" mod_level="1" title="DETAIL" urlid="compen" target="#" urlsegment="3" urlargs="#">
+	        <title>Compensation Maintenance Detail - Position - List</title>
+	      	<controls>
+	            <button mod_id="kg-cm-al-ls" mod_level="2" urlargs="urlarg1" target="compen_pa_dtl_create">Add</button>
+	        </controls>
+	    </create>
+	</padetail>
+	<padetailcreate>
+    	<list mod_id="kg-cm-al-ls" mod_level="1" title="List" urlid="" target="compen_list" urlsegment="3" urlargs="#">
+	        <title>Compensation Maintenance - List</title>
+	        <controls>
+	            
+	        </controls>
+	    </list>
+	    <detail mod_id="kg-cm-al-ls" mod_level="1" title="DETAIL" urlid="" target="compen_pa_dtl" urlsegment="3" urlargs="urlarg1">
+	        <title>Compensation Maintenance Detail</title>
+	      	<controls>
+	        </controls>
+	    </detail>
+	    <create mod_id="kg-cm-al-ls" mod_level="1" title="FORM" urlid="compen" target="#" urlsegment="3" urlargs="#">
+	        <title>Compensation Maintenance Detail Position Form</title>
+	      	<controls>
+	        </controls>
+	    </create>
+	</padetailcreate>
+</tabs>

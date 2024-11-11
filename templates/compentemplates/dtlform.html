@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load custom_fields %}
+{% block content %}
+<form action="{% if Edit %}{% url 'compen_dtl_edit' id %}{% else %}{% url 'compen_dtl_create' id %}{% endif %}" method="post">
+{% csrf_token %}
+{% if display_error %}
+<br />
+	<div class="alert alert-error">
+		{{ form.errors }}
+		{{ form.non_field_errors }}
+		{{ error }}
+	</div>
+{% endif %}
+{% if message %}
+	<div class="alert alert-success">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<h4>Success!</h4>
+		The data has been saved...
+	</div>
+{% endif %}
+	<table class="table2 table2-form">
+		<tbody>
+			<tr>
+				<td style="width:100px;">Salary Category:</td>
+				<td>{% lookupfield form form.salarycat %}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Band/Level:</td>
+				<td>{% lookupfield form form.step_position_level %}</td>
+			</tr>
+			<tr>
+				<td style="width:100px;">Amount:</td>
+				<td>{{ form.amount }}</td>
+			</tr>
+			<tr>
+				<td> </td>
+				<td>
+					<button type="submit" class="btn btn-small" name="save" value="save">Save</button>
+					{% if Edit %}
+						
+					{% else %}
+						<button type="submit" class="btn btn-small" name="save" value="savenew">Save and New</button>
+					{% endif %}
+					<a class="btn btn-small" href="{% url 'compen_dtl' id %}">Cancel</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</form>
+<script>
+	$(document).ready(function() {
+		$('.alert-success').fadeIn('slow').delay(5000).animate({opacity:0}).hide(0);
+	});
+</script>
+{% endblock content %}

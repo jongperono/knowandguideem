@@ -1,0 +1,24 @@
+<tabs>
+    <creategroup>
+	    <create title="Create" id="create" target="peskgmlocationcreate">
+	        <title>test</title>
+	    </create>
+	</creategroup>
+	<listgroup>
+	    <list title="List" id="list" target="peskgmlocationlist">
+	        <title>Location</title>
+	        <controls>
+	            <button target="peskgmlocationcreate">Add 1</button>
+	            <button target="peskgmlocationcreate">Edit</button>
+	        </controls>
+	    </list>
+	    <tab2 title="tab2" target="#">
+            <title>Tab2</title>
+            <controls>
+                <button target="peskgmlocationcreate">Add</button>
+                <button target="peskgmlocationcreate">Edit</button>
+                <button target="peskgmlocationcreate">Delete</button>
+            </controls>
+        </tab2>
+	</listgroup>
+</tabs>

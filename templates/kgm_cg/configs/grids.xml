@@ -1,0 +1,580 @@
+<grid>
+	<ls numcol="3">
+		<col role="counter">
+			<lablel>#</lablel>
+		</col>
+		<col role="field" filter="true" sort="true" modelproperty="true" modelproperty-field="id">
+        <label>TXN</label>
+        <type>number</type>
+        <parname>txn</parname>
+        <modelfield>txn</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+		<col role="field" filter="true" sort="true" modelproperty="true" modelproperty-field="person__company_id">
+        <label>ID</label>
+        <type>number</type>
+        <parname>cid</parname>
+        <modelfield>emp_company_id</modelfield>
+        <class>gridfiltersize-small</class>
+     </col>
+     <col role="field" filter="true" sort="true" foreignkey="true" filtercustom="true">
+        <label>Name</label>
+        <type>text</type>
+        <parname>n</parname>
+        <modelfield>person</modelfield>
+        <class>gridfiltersize-medium</class>
+     </col>
+     <col role="field" filter="true" sort="true">
+        <label>Year</label>
+        <type>selection</type>
+        <parname>y</parname>
+        <modelfield>year</modelfield>
+        <selection>[{"value": "", "label": "-------"}, {"value": 2018, "label": "2018"}, {"value": 2017, "label": "2017"}, {"value": 2016, "label": "2016"}, {"value": 2015, "label": "2015"}]</selection>
+        <class>gridfiltersize-small</class>
+      </col>
+     <col role="field" filter="true" sort="true" foreignkey="true" modelproperty-field="region__code">
+        <label>REGION</label>
+        <type>text</type>
+        <parname>r</parname>
+        <modelfield>region</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+      <col role="field" filter="true" sort="true">
+        <label>SUSPN</label>
+        <type>number</type>
+        <parname>ss</parname>
+        <modelfield>suspension</modelfield>
+        <class>gridfiltersize-small align-right</class>
+      </col>
+      <col role="field" filter="true" sort="true">
+        <label>SCORE</label>
+        <type>number</type>
+        <parname>sc</parname>
+        <modelfield>score</modelfield>
+        <class>gridfiltersize-small align-right</class>
+      </col>
+      <col role="field" filter="true" sort="true">
+        <label>FINAL</label>
+        <type>number</type>
+        <parname>fs</parname>
+        <modelfield>final_score</modelfield>
+        <class>gridfiltersize-small align-right</class>
+      </col>
+      <col role="field" filter="true" sort="true" foreignkey="true" filtercustom="true">
+        <label>Encoded By</label>
+        <type>text</type>
+        <parname>eb</parname>
+        <modelfield>encodedby</modelfield>
+        <class>gridfiltersize-medium</class>
+      </col>
+      <col role="controls" filter="true" modelproperty="true" filter-submit="true" mod_id="kg-pms-cg">
+	        <type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		        <modelfield mod_level="2">icon_status</modelfield>
+		        <modelfield mod_level="2">icon_status</modelfield>
+	        </actions>
+      </col>
+	</ls>
+	<ls2 numcol="3">
+		<col role="counter">
+			<lablel>#</lablel>
+		</col>
+		<col role="field" filter="true" sort="true" modelproperty="true" modelproperty-field="id">
+        <label>TXN</label>
+        <type>number</type>
+        <parname>txn</parname>
+        <modelfield>txn</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+		<col role="field" filter="true" sort="true" modelproperty="true" modelproperty-field="person__company_id">
+        <label>ID</label>
+        <type>number</type>
+        <parname>cid</parname>
+        <modelfield>emp_company_id</modelfield>
+        <class>gridfiltersize-small</class>
+     </col>
+     <col role="field" filter="true" sort="true" foreignkey="true" filtercustom="true">
+        <label>Name</label>
+        <type>text</type>
+        <parname>n</parname>
+        <modelfield>person</modelfield>
+        <class>gridfiltersize-medium</class>
+     </col>
+     <col role="field" filter="true" sort="true">
+        <label>Year</label>
+        <type>number</type>
+        <parname>y</parname>
+        <modelfield>year</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+     <col role="field" filter="true" sort="true" foreignkey="true" modelproperty-field="region__code">
+        <label>REGION</label>
+        <type>text</type>
+        <parname>r</parname>
+        <modelfield>region</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+      <col role="field" sort="true" modelproperty="true">
+        <label>LEVEL</label>
+        <type>text</type>
+        <parname>l</parname>
+        <modelfield>lvl</modelfield>
+        <class>gridfiltersize-small align-right</class>
+      </col>
+      <col role="field" filter="true" sort="true">
+        <label>SUSPN</label>
+        <type>number</type>
+        <parname>ss</parname>
+        <modelfield>suspension</modelfield>
+        <class>gridfiltersize-small align-right</class>
+      </col>
+      <col role="field" filter="true" sort="true">
+        <label>SCORE</label>
+        <type>number</type>
+        <parname>sc</parname>
+        <modelfield>score</modelfield>
+        <class>gridfiltersize-small align-right</class>
+      </col>
+      <col role="field" filter="true" sort="true">
+        <label>FINAL</label>
+        <type>number</type>
+        <parname>fs</parname>
+        <modelfield>final_score</modelfield>
+        <class>gridfiltersize-small align-right</class>
+      </col>
+      <col role="field" filter="true" sort="true">
+        <label>AMT</label>
+        <type>number</type>
+        <parname>a</parname>
+        <modelfield>amount</modelfield>
+        <class>gridfiltersize-small align-right</class>
+      </col>
+      <col role="field" filter="true" sort="true">
+        <label>+AMT</label>
+        <type>number</type>
+        <parname>aa</parname>
+        <modelfield>amount2</modelfield>
+        <class>gridfiltersize-small align-right</class>
+      </col>
+      <col role="field" filter="true" sort="true">
+        <label>TOTAL</label>
+        <type>number</type>
+        <parname>t</parname>
+        <modelfield>total</modelfield>
+        <class>gridfiltersize-small align-right</class>
+      </col>
+      <col role="field" filter="true" sort="true" foreignkey="true" filtercustom="true">
+        <label>Encoded By</label>
+        <type>text</type>
+        <parname>eb</parname>
+        <modelfield>encodedby</modelfield>
+        <class>gridfiltersize-medium</class>
+      </col>
+      <col role="field" filter="true" sort="true" modelproperty="true" modelproperty-field="file_submission"> 
+	    <label>File Sub.</label>
+	    <type>selection</type>
+	    <parname>filesubmission</parname>
+	    <modelfield>filesubmit</modelfield>
+	    <selection>[{"value": "", "label": "-------"}, {"value": 0, "label": "No"}, {"value": 1, "label": "Yes"}]</selection>
+	    <class>gridfiltersize-small</class>
+	  </col>
+      <col role="controls" filter="true" modelproperty="true" filter-submit="true" mod_id="kg-pms-cg">
+	        <type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		        <modelfield mod_level="2">icon_status2</modelfield>
+		        <modelfield mod_level="2">icon_status2</modelfield>
+	        </actions>
+      </col>
+	</ls2>
+	<ls3 numcol="3">
+		<col role="counter">
+			<lablel>#</lablel>
+		</col>
+		<col role="field" filter="true" sort="true" modelproperty="true" modelproperty-field="id">
+        <label>TXN</label>
+        <type>number</type>
+        <parname>txn</parname>
+        <modelfield>txn</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+		<col role="field" filter="true" sort="true" modelproperty="true" modelproperty-field="person__company_id">
+        <label>ID</label>
+        <type>number</type>
+        <parname>cid</parname>
+        <modelfield>emp_company_id</modelfield>
+        <class>gridfiltersize-small</class>
+     </col>
+     <col role="field" filter="true" sort="true" foreignkey="true" filtercustom="true">
+        <label>Name</label>
+        <type>text</type>
+        <parname>n</parname>
+        <modelfield>person</modelfield>
+        <class>gridfiltersize-medium</class>
+     </col>
+     <col role="field" filter="true" sort="true">
+        <label>Year</label>
+        <type>selection</type>
+        <parname>y</parname>
+        <modelfield>year</modelfield>
+        <selection>[{"value": "", "label": "-------"}, {"value": 2018, "label": "2018"}, {"value": 2017, "label": "2017"}, {"value": 2016, "label": "2016"}, {"value": 2015, "label": "2015"}]</selection>
+        <class>gridfiltersize-small</class>
+      </col>
+     <col role="field" filter="true" sort="true" foreignkey="true" modelproperty-field="region__code">
+        <label>REGION</label>
+        <type>text</type>
+        <parname>r</parname>
+        <modelfield>region</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+      <col role="field" filter="true" sort="true">
+        <label>SUSPN</label>
+        <type>number</type>
+        <parname>ss</parname>
+        <modelfield>suspension</modelfield>
+        <class>gridfiltersize-small align-right</class>
+      </col>
+      <col role="field" filter="true" sort="true">
+        <label>SCORE</label>
+        <type>number</type>
+        <parname>sc</parname>
+        <modelfield>score</modelfield>
+        <class>gridfiltersize-small align-right</class>
+      </col>
+      <col role="field" filter="true" sort="true">
+        <label>FINAL</label>
+        <type>number</type>
+        <parname>fs</parname>
+        <modelfield>final_score</modelfield>
+        <class>gridfiltersize-small align-right</class>
+      </col>
+      <col role="field" filter="true" sort="true" foreignkey="true" filtercustom="true">
+        <label>Encoded By</label>
+        <type>text</type>
+        <parname>eb</parname>
+        <modelfield>encodedby</modelfield>
+        <class>gridfiltersize-medium</class>
+      </col>
+      <col role="field" filter="true" sort="true" modelproperty="true" modelproperty-field="file_submission"> 
+	      	<label>File Sub.</label>
+	      	<type>selection</type>
+	      	<parname>filesubmission</parname>
+	      	<modelfield>filesubmit</modelfield>
+	      	<selection>[{"value": "", "label": "-------"}, {"value": 0, "label": "No"}, {"value": 1, "label": "Yes"}]</selection>
+	      	<class>gridfiltersize-small</class>
+	    </col> 
+      <col role="controls" filter="true" modelproperty="true" filter-submit="true" mod_id="kg-pms-cg">
+	        <type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		        <modelfield mod_level="2">icon_status2</modelfield>
+		        <modelfield mod_level="2">icon_status2</modelfield>
+	        </actions>
+      </col>
+	</ls3>
+	<cgtbl numcol="3">
+		<col role="counter">
+			<lablel>#</lablel>
+		</col>
+		<col role="field" filter="true" sort="true" modelproperty="true" modelproperty-field="id">
+        <label>ID</label>
+        <type>number</type>
+        <parname>txn</parname>
+        <modelfield>txn</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+     <col role="field" filter="true" sort="true">
+        <label>Name</label>
+        <type>text</type>
+        <parname>n</parname>
+        <modelfield>name</modelfield>
+        <class></class>
+      </col>
+      <col role="field">
+        <label>Region</label>
+        <type>text</type>
+        <parname>r</parname>
+        <modelfield>type</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+      <col role="field">
+        <label>REG FROM</label>
+        <type>number</type>
+        <parname>df</parname>
+        <modelfield>dt_frm</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+      <col role="field">
+        <label>REG TO</label>
+        <type>number</type>
+        <parname>dt</parname>
+        <modelfield>dt_to</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+      <col role="controls" filter="true" modelproperty="true" filter-submit="true" mod_id="kg-pms-cgt">
+	        <type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		        <modelfield mod_level="3">ctrlbtn_w</modelfield>
+		        <modelfield mod_level="2">ctrlbtn_r</modelfield>
+	        </actions>
+      </col>
+	</cgtbl>
+	<cgtblvw numcol="3">
+	 <col role="counter">
+		<lablel>#</lablel>
+	 </col>
+     <col role="field" modelproperty="true" modelproperty-field="lvl_f">
+        <label>LVL FROM</label>
+        <type>text</type>
+        <parname>lf</parname>
+        <modelfield>lvlf</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+      <col role="field" modelproperty="true" modelproperty-field="lvl_t">
+        <label>LVL TO</label>
+        <type>text</type>
+        <parname>lt</parname>
+        <modelfield>lvlt</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+      <col role="field" modelproperty="true" modelproperty-field="lvl2_f">
+        <label>BAND FROM</label>
+        <type>text</type>
+        <parname>bf</parname>
+        <modelfield>bf</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+      <col role="field" modelproperty="true" modelproperty-field="lvl2_t">
+        <label>BAND TO</label>
+        <type>text</type>
+        <parname>bt</parname>
+        <modelfield>bt</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+      <col role="field" modelproperty="true" modelproperty-field="rate_id">
+        <label>RATE FROM</label>
+        <type>text</type>
+        <parname>rf</parname>
+        <modelfield>rf</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+      <col role="field" modelproperty="true" modelproperty-field="rate_id">
+        <label>RATE TO</label>
+        <type>text</type>
+        <parname>rt</parname>
+        <modelfield>rt</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+      <col role="field">
+        <label>AMT</label>
+        <type>number</type>
+        <parname>a</parname>
+        <modelfield>amount</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+      <col role="field" modelproperty="true" modelproperty-field="plus_rate_id">
+        <label>+RATE</label>
+        <type>text</type>
+        <parname>prf</parname>
+        <modelfield>plus_rf</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+      <col role="field">
+        <label>+AMT</label>
+        <type>number</type>
+        <parname>pa</parname>
+        <modelfield>plus_amount</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+      <col role="controls" filter="true" modelproperty="true" filter-submit="true" mod_id="kg-pms-cgt">
+        <type>text</type>
+        <parname>icons</parname>
+        <class>gridfiltersize-small align-right</class>
+        <label>Action</label>
+        <actions>
+	      <modelfield mod_level="3">ctrlbtn_w</modelfield>
+	      <modelfield mod_level="2">ctrlbtn_r</modelfield>
+        </actions>
+   	  </col>
+	</cgtblvw>
+	<grid2 numcol="10">
+        <col role="counter">
+            <label>#</label>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>text</type>
+            <parname>comp_id</parname>
+            <label>Company ID</label>
+            <class>gridfiltersize-small</class>
+            <modelfield>company_id</modelfield>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>text</type>
+            <parname>lname</parname>
+            <label>last name</label>
+            <class>gridfiltersize-medium</class>
+            <modelfield>last_name</modelfield>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>text</type>
+            <parname>fname</parname>
+            <label>first name</label>
+            <modelfield>first_name</modelfield>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>text</type>
+            <parname>mname</parname>
+            <class>gridfiltersize-medium</class>
+            <label>middle name</label>
+            <modelfield>middle_name</modelfield>
+        </col>
+        <col role="field" modelproperty="true" filter="false" sort="false">
+        	<label>Employment Status</label>
+        	<type>text</type>
+        	<parname>emp</parname>
+        	<modelfield>employ_stat</modelfield>
+      	</col>
+        <col role="controls" filter="true" modelproperty="true" filter-submit="true" mod_id="kg-pms-cg">
+	        <type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		        <modelfield mod_level="1">ctrlbtn_g</modelfield>
+		        <modelfield mod_level="1">ctrlbtn_g</modelfield>
+	        </actions>
+	   	</col>
+    </grid2>
+    <grid3 numcol="10">
+        <col role="counter">
+            <label>#</label>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>number</type>
+            <parname>fromrate</parname>
+            <label>Rate From</label>
+            <modelfield>from_rate</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+        <col role="field" filter="true" sort="true">
+            <type>number</type>
+            <parname>torate</parname>
+            <label>Rate To</label>
+            <modelfield>to_rate</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+        <col role="controls" filter="true" modelproperty="true" filter-submit="true" mod_id="kg-pms-cgt">
+        	<type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		      <modelfield mod_level="3">ctrlbtn_w</modelfield>
+		      <modelfield mod_level="2">ctrlbtn_r</modelfield>
+	        </actions>
+   	  	</col>
+    </grid3>
+    <cmdtltbl numcol="3">
+		<col role="counter">
+			<lablel>#</lablel>
+		</col>
+		<col role="field" sort="true" modelproperty="true" modelproperty-field="id">
+        <label>ID</label>
+        <type>number</type>
+        <parname>txn</parname>
+        <modelfield>txn</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+     <col role="field" modelproperty="true" filter="false" sort="false">
+        <label>Company Name</label>
+        <type>text</type>
+        <parname>n</parname>
+        <modelfield>company</modelfield>
+        <class></class>
+      </col>
+      
+      <col role="field" modelproperty="true" filter="false" sort="false">
+        <label>Company Rating</label>
+        <type>number</type>
+        <parname>r</parname>
+        <modelfield>cmpyrate_stat</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+      
+      <col role="field" modelproperty="true" filter="false" sort="false">
+        <label>Over All Rating</label>
+        <type>number</type>
+        <parname>df</parname>
+        <modelfield>allcmpy_stat</modelfield>
+        <class>gridfiltersize-small</class>
+      </col>
+      <col role="controls" modelproperty="true"  mod_id="kg-pms-cgt">
+	        <type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		        <modelfield mod_level="3">ctrlbtn_w</modelfield>
+		        <modelfield mod_level="2">ctrlbtn_w</modelfield>
+	        </actions>
+      </col>
+      
+      
+      
+	</cmdtltbl>
+	
+	<ratetbl numcol="10">
+        <col role="counter">
+            <label>#</label>
+        </col>
+        <col role="field" sort="true">
+            <type>text</type>
+            <parname>fromrate</parname>
+            <label>Position</label>
+            <modelfield>position_level</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+        <col role="field" sort="true">
+            <type>number</type>
+            <parname>fromrate</parname>
+            <label>All Hit</label>
+            <modelfield>all_hit</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+        <col role="field" sort="true">
+            <type>number</type>
+            <parname>fromrate</parname>
+            <label>Hit/Not Hit</label>
+            <modelfield>hit_nothit</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+        <col role="field" sort="true">
+            <type>number</type>
+            <parname>fromrate</parname>
+            <label>All Not Hit</label>
+            <modelfield>all_nothit</modelfield>
+            <class>gridfiltersize-small</class>
+        </col>
+        
+        <col role="controls"  modelproperty="true" mod_id="kg-pms-cgt">
+        	<type>text</type>
+	        <parname>icons</parname>
+	        <class>gridfiltersize-small align-right</class>
+	        <label>Action</label>
+	        <actions>
+		      <modelfield mod_level="3">ctrlbtn_w</modelfield>
+		      <modelfield mod_level="2">ctrlbtn_w</modelfield>
+	        </actions>
+   	  	</col>
+    </ratetbl>
+</grid>

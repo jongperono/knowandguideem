@@ -1,0 +1,7 @@
+{% for i in info %}
+	{% if forloop.last %}
+        {{ i}}
+    {% else %}
+        {{ i }} >
+    {% endif %}
+{% endfor %}

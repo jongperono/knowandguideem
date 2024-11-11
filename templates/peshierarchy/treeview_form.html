@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load custom_fields %}
+{% block content %}
+
+  <form action="{% url 'peskgmhierarchytreeviewlist' %}" method="get">  
+  <table class="table2 table2-form">
+      <tbody>
+          <tr>
+              <td style="width:80px;">Company : </td>
+              <td>
+                {{ form.hierarchy }}
+              </td>
+          </tr>
+          <tr>
+              <td>
+              </td>
+              <td>
+                <div class="btn-controls-footer">
+                <div class="btn-controls">
+                  <button type="submit" class="btn btn-small"  name="save" value="save" > Go </button>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+</form>
+{% endblock content %}
+
+
+
+

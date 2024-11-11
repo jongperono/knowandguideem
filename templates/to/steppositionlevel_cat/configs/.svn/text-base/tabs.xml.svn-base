@@ -1,0 +1,36 @@
+<tabs>
+    <createspl>
+    	<list title="List" urlid="" target="salarycat_list" urlsegment="4" urlargs="#">
+	        <title>Step Position Level Category</title>
+	        <controls>
+	            
+	        </controls>
+	    </list>
+	    <list1 title="Detail" urlid="" target="splcat_list" urlsegment="4" urlargs="urlarg1">
+	        <title>Step Position Level Category</title>
+	        <controls>
+	            <button target="splcat_create" urlargs="urlarg1">Add</button>
+	        </controls>
+	    </list1>
+	    <create title="FORM" urlid="splcat" target="#" urlsegment="4" urlargs="#">
+	        <title>Step Position Level Category</title>
+	      	<controls>
+	            
+	        </controls>
+	    </create>
+	</createspl>
+	<listspl>
+		<list title="List" urlid="" target="salarycat_list" urlsegment="4" urlargs="#">
+	        <title>Position Category</title>
+	        <controls>
+	            <button target="splcat_create" urlargs="urlarg1">Add</button>
+	        </controls>
+	    </list>
+	    <list1 title="Detail" urlid="splcat" target="#" urlsegment="4" urlargs="#">
+	        <title>Position Category</title>
+	        <controls>
+	            <button target="splcat_create" urlargs="urlarg1">Add</button>
+	        </controls>
+	    </list1>
+	</listspl>
+</tabs>
