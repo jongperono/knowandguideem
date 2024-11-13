@@ -552,6 +552,8 @@ def cglocked():
 
 def ls_paf(request):
     val = {'title':'PES - Planning & Development - Performance Appraisal List (PAF)', 'feature':'kgm_cg', 'tabgroup':'listgrouppaf', 'urlargs':{}, 'gridgroup':'ls'}
+    val['gridgroup'] = 'ls2'
+    val['gridlist'], val['gridlist_count'] = get_filtered_queryset(request, PesKgmCashgiftAmount.objects.all(), val['feature'], val['gridgroup'])
     return render_to_response('kgm_cg/listpaf.html',{'page':val},context_instance=RequestContext(request))
 
 def add_paf(request):
