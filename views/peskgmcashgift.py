@@ -556,5 +556,22 @@ def ls_paf(request):
     val['gridlist'], val['gridlist_count'] = get_filtered_queryset(request, PesKgmCashgiftAmount.objects.all(), val['feature'], val['gridgroup'])
     return render_to_response('kgm_cg/listpaf.html',{'page':val},context_instance=RequestContext(request))
 
+# @transaction.commit_manually()
 def add_paf(request):
-    raise Exception('add paf') 
+    person = None
+    susp_access = None
+    #global LOCK_PERIOD
+    info = PesKgmCashGiftLockDates.objects.get(pk=1)
+    LOCK_PERIOD = info.datefrom, info.dateto
+    val = {'title':'PES - Planning & Development - Performance Appraisal List (PAF)', 'feature':'kgm_cg', 'tabgroup':'formgrouppaf', 'urlargs':{}, 'gridgroup':'ls'}
+    forms = {}
+    pid = get_person_id(request)
+    person_id = request.GET.get('pid')
+    if person_id:
+        person = Person.objects.get(id=person_id)
+        #print person,'yeah'
+    forms['cg'] = PesPayrollCGForm(initial={'suspension':0, 'year':datetime.now().year})
+    return render_to_response('kgm_cg/form_paf.html',{'page':val,'forms':forms},context_instance=RequestContext(request))
+    #return render_to_response('kgm_cg/form_paf.html',{'forms':forms,'page':val,'error':error,'display_error':1,'person':person,'LOCK_PERIOD':LOCK_PERIOD,'susp_access':susp_access},context_instance=RequestContext(request))
+    
+    

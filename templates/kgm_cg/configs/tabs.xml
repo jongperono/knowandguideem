@@ -237,5 +237,18 @@
           </controls>
       </list>
 	</formgroup4>
+    <formgrouppaf>
+	    <!-- <list title="Form" target="#" urlid="cg" urlsegment="4">
+          <title>Cash Gift Master Listssssssssss</title>
+          <controls>              
+          </controls>
+      </list> -->
+      <form mod_id="kg-pms-cg" mod_level="2" title="Form" target="#" urlid="add" urlsegment="4">
+	        <title>Performance Appraisal Form</title>
+	        <controls>
+	            
+	        </controls>
+	    </form>
+	</formgrouppaf>
 	
 </tabs>
